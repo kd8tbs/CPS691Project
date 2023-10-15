@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ULx2LpgA2PU95P2AiGSAkmBlrovmbXDH/Nm5W3gfoNk=",
+  "Hash": "XmSKfc3yrEfb8yxAvdI+YdMy2h1S9j/zlzzGXDej0Yw=",
   "Source": "CPS691BlazorApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -7155,23 +7155,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
-    },
-    {
-      "Identity": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\wwwroot\\sample-data\\weather.json",
-      "SourceId": "CPS691BlazorApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "sample-data/weather.json",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\sample-data\\weather.json"
     }
   ]
 }
