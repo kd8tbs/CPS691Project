@@ -1,56 +1,139 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      ballX: 0,
-      ballY: 0,
-      dx: 5, // Horizontal direction
-      dy: 5, // Vertical direction
-    };
-  }
+class App extends Component {
+  state = {
+    balls: 1,
+    ballPositions: [
+      {
+        x: 50,
+        y: 50,
+        dx: 5,
+        dy: 5,
+        color: '#'+Math.floor(Math.random()*16777215).toString(16), // Random color
+      },
+    ],
+  };
 
   componentDidMount() {
-    this.animateBall();
+    requestAnimationFrame(this.animateBalls);
   }
 
-  animateBall = () => {
-    const { ballX, ballY, dx, dy } = this.state;
-    const maxX = window.innerWidth - 50;
-    const maxY = window.innerHeight - 50;
+  animateBalls = () => {
+    const { ballPositions } = this.state;
+    const maxX = window.innerWidth;
+    const maxY = window.innerHeight;
 
-    let newBallX = ballX + dx;
-    let newBallY = ballY + dy;
+    const newBallPositions = ballPositions.map(({ x, y, dx, dy, color }) => {
+      let newBallX = x + dx;
+      let newBallY = y + dy;
 
-    // Check if the ball hits the window boundaries
-    if (newBallX > maxX || newBallX < 0) {
-      this.setState({ dx: -dx }); // Reverse horizontal direction
-      newBallX = ballX + dx;
-    }
+      // Check if the ball hits the window boundaries
+      if (newBallX > maxX || newBallX < 0) {
+        dx = -dx; // Reverse horizontal direction
+        newBallX = x + dx;
+      }
 
-    if (newBallY > maxY || newBallY < 0) {
-      this.setState({ dy: -dy }); // Reverse vertical direction
-      newBallY = ballY + dy;
-    }
+      if (newBallY > maxY || newBallY < 0) {
+        dy = -dy; // Reverse vertical direction
+        newBallY = y + dy;
+      }
 
-    this.setState({
-      ballX: newBallX,
-      ballY: newBallY,
+      return { x: newBallX, y: newBallY, dx, dy, color };
     });
 
-    requestAnimationFrame(this.animateBall);
+    this.setState({ ballPositions: newBallPositions });
+
+    requestAnimationFrame(this.animateBalls);
+  };
+
+  increaseBalls = () => {
+    const { balls, ballPositions } = this.state;
+    const maxX = window.innerWidth;
+    const maxY = window.innerHeight;
+    const newBall = {
+      x: Math.floor(Math.random() * maxX),
+      y: Math.floor(Math.random() * maxY),
+      dx: Math.floor(Math.random() * 10) - 5, // Random direction
+      dy: Math.floor(Math.random() * 10) - 5, // Random direction
+      color: '#'+Math.floor(Math.random()*16777215).toString(16), // Random color
+    };
+    this.setState({
+      balls: balls + 1,
+      ballPositions: [...ballPositions, newBall],
+    });
+  };
+
+  decreaseBalls = () => {
+    const { balls, ballPositions } = this.state;
+    if (balls > 1) {
+      this.setState({
+        balls: balls - 1,
+        ballPositions: ballPositions.slice(0, -1),
+      });
+    }
+  };
+
+  handleInputChange = (event) => {
+    const { value } = event.target;
+    const { balls, ballPositions } = this.state;
+
+    if (value > balls) {
+      const maxX = window.innerWidth;
+      const maxY = window.innerHeight;
+      const newBalls = value - balls;
+      const newBallPositions = Array.from({ length: newBalls }, () => ({
+        x: Math.floor(Math.random() * maxX),
+        y: Math.floor(Math.random() * maxY),
+        dx: Math.floor(Math.random() * 10) - 5, // Random direction
+        dy: Math.floor(Math.random() * 10) - 5, // Random direction
+        color: '#'+Math.floor(Math.random()*16777215).toString(16), // Random color
+      }));
+      this.setState({
+        balls: parseInt(value),
+        ballPositions: [...ballPositions, ...newBallPositions],
+      });
+    } else if (value < balls) {
+      this.setState({
+        balls: parseInt(value),
+        ballPositions: ballPositions.slice(0, value),
+      });
+    }
   };
 
   render() {
-    const { ballX, ballY } = this.state;
+    const { balls, ballPositions } = this.state;
+
     return (
-      <div className="App">
-        <div
-          className="ball"
-          style={{ left: ballX, top: ballY }}
-        ></div>
+      <div>
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <label htmlFor="balls-input">Number of balls:</label>
+          <input
+            id="balls-input"
+            type="number"
+            value={balls}
+            onChange={this.handleInputChange}
+          />
+        </div>
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <button onClick={this.increaseBalls}>Add ball</button>
+          <button onClick={this.decreaseBalls}>Remove ball</button>
+        </div>
+        <div style={{ position: 'relative', zIndex: -1 }}>
+          {ballPositions.map(({ x, y, color }, index) => (
+            <div
+              key={index}
+              style={{
+                position: 'absolute',
+                top: y,
+                left: x,
+                width: 50,
+                height: 50,
+                borderRadius: '50%',
+                backgroundColor: color,
+              }}
+            />
+          ))}
+        </div>
       </div>
     );
   }
