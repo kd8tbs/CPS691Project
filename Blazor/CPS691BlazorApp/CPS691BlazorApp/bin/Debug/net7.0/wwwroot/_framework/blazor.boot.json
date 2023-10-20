@@ -7,6 +7,8 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "Blazor.Extensions.Canvas.JS.dll": "sha256-TrW1uaSNUS+J8xVJErxIf1NQuNC7kn50KzMYYF\/4JtM=",
+      "Blazor.Extensions.Canvas.dll": "sha256-W20pWMXQg2yTv0w4VJhrjCJKNRYe3PiUU9S76XipNe8=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-8f3B2YKtr38X\/o9azir1JiTTvPB3b+xEcluEyMAk1iE=",
       "Microsoft.AspNetCore.Components.dll": "sha256-4ILNFgB643G5ZkreiD24BGeHIeuV3whK+n6lzWroM3s=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-pMIawRgV4NJefI\/7ZXCbth0OgQLXSJtmcv+bSXL\/bKU=",
@@ -198,13 +200,13 @@
       "mscorlib.dll": "sha256-8OmdVHzoN7xteY5ehp0L8R17I9QxFkH2lUVHFuslE0s=",
       "netstandard.dll": "sha256-urq+e2ZQXxmOWMRxTR92529HnUVu6+kyVnfF6SoLad8=",
       "System.Private.CoreLib.dll": "sha256-ixnF\/wVKLHZM1N0lfJufpZ41EC2LvvyiSqdW43h3Xew=",
-      "CPS691BlazorApp.dll": "sha256-IefXasgwhHWMotILsUpRfkISIcyhEItaP0Un1AHyyxA="
+      "CPS691BlazorApp.dll": "sha256-e1yAw65lk2eVUThDn2wr5Fo\/NX0LwNLtJuN266LTYtQ="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "CPS691BlazorApp.pdb": "sha256-XHRfyAK\/zn4AICJxKoJ2IkWrkk3yaOjrTMI+M4X95bc="
+      "CPS691BlazorApp.pdb": "sha256-TtFoNrmEypSsQcqLcLOY\/\/9xgfyUHmhdD08o2jZ5kPM="
     },
     "runtime": {
       "dotnet.7.0.12.f1sflfmvbf.js": "sha256-cPJgWy8SjMaYFeimGkYy23ls+rDZVmoC\/eMoHpqRc+4=",

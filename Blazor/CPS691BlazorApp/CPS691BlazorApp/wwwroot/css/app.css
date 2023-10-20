@@ -99,3 +99,11 @@ a, .btn-link {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+
+canvas {
+    background-color: #ffffff;
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+}

@@ -826,3 +826,11 @@ C:\Users\steph\Downloads\Classes\CPS691\CPS691Project\Blazor\CPS691BlazorApp\CPS
 C:\Users\steph\Downloads\Classes\CPS691\CPS691Project\Blazor\CPS691BlazorApp\CPS691BlazorApp\obj\Debug\net7.0\refint\CPS691BlazorApp.dll
 C:\Users\steph\Downloads\Classes\CPS691\CPS691Project\Blazor\CPS691BlazorApp\CPS691BlazorApp\obj\Debug\net7.0\CPS691BlazorApp.pdb
 C:\Users\steph\Downloads\Classes\CPS691\CPS691Project\Blazor\CPS691BlazorApp\CPS691BlazorApp\obj\Debug\net7.0\ref\CPS691BlazorApp.dll
+C:\Users\steph\Downloads\Classes\CPS691\CPS691Project\Blazor\CPS691BlazorApp\CPS691BlazorApp\bin\Debug\net7.0\wwwroot\_framework\Blazor.Extensions.Canvas.dll
+C:\Users\steph\Downloads\Classes\CPS691\CPS691Project\Blazor\CPS691BlazorApp\CPS691BlazorApp\bin\Debug\net7.0\wwwroot\_framework\Blazor.Extensions.Canvas.JS.dll
+C:\Users\steph\Downloads\Classes\CPS691\CPS691Project\Blazor\CPS691BlazorApp\CPS691BlazorApp\bin\Debug\net7.0\wwwroot\_framework\Blazor.Extensions.Canvas.JS.dll.gz
+C:\Users\steph\Downloads\Classes\CPS691\CPS691Project\Blazor\CPS691BlazorApp\CPS691BlazorApp\bin\Debug\net7.0\wwwroot\_framework\Blazor.Extensions.Canvas.dll.gz
+C:\Users\steph\Downloads\Classes\CPS691\CPS691Project\Blazor\CPS691BlazorApp\CPS691BlazorApp\bin\Debug\net7.0\Blazor.Extensions.Canvas.JS.dll
+C:\Users\steph\Downloads\Classes\CPS691\CPS691Project\Blazor\CPS691BlazorApp\CPS691BlazorApp\bin\Debug\net7.0\Blazor.Extensions.Canvas.dll
+C:\Users\steph\Downloads\Classes\CPS691\CPS691Project\Blazor\CPS691BlazorApp\CPS691BlazorApp\obj\Debug\net7.0\build-gz\+OP6gI1x.gz
+C:\Users\steph\Downloads\Classes\CPS691\CPS691Project\Blazor\CPS691BlazorApp\CPS691BlazorApp\obj\Debug\net7.0\build-gz\5IPxUg9a.gz

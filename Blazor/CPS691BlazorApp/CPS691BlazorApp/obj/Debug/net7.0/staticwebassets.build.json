@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XmSKfc3yrEfb8yxAvdI+YdMy2h1S9j/zlzzGXDej0Yw=",
+  "Hash": "jNsJpvDySSkYVg2RhZhMuU8ugp8j79PcPvLomNH3/cA=",
   "Source": "CPS691BlazorApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -17,6 +17,23 @@
   ],
   "Assets": [
     {
+      "Identity": "C:\\Users\\steph\\.nuget\\packages\\blazor.extensions.canvas\\1.1.1\\staticwebassets\\blazor.extensions.canvas.js",
+      "SourceId": "Blazor.Extensions.Canvas",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\steph\\.nuget\\packages\\blazor.extensions.canvas\\1.1.1\\staticwebassets\\",
+      "BasePath": "_content/Blazor.Extensions.Canvas",
+      "RelativePath": "blazor.extensions.canvas.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\steph\\.nuget\\packages\\blazor.extensions.canvas\\1.1.1\\staticwebassets\\blazor.extensions.canvas.js"
+    },
+    {
       "Identity": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.boot.json",
       "SourceId": "CPS691BlazorApp",
       "SourceType": "Computed",
@@ -32,6 +49,40 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net7.0\\blazor.boot.json"
+    },
+    {
+      "Identity": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazor.Extensions.Canvas.dll",
+      "SourceId": "CPS691BlazorApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazor.Extensions.Canvas.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\steph\\.nuget\\packages\\blazor.extensions.canvas\\1.1.1\\lib\\netstandard2.1\\Blazor.Extensions.Canvas.dll"
+    },
+    {
+      "Identity": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazor.Extensions.Canvas.JS.dll",
+      "SourceId": "CPS691BlazorApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazor.Extensions.Canvas.JS.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\steph\\.nuget\\packages\\blazor.extensions.canvas\\1.1.1\\lib\\netstandard2.1\\Blazor.Extensions.Canvas.JS.dll"
     },
     {
       "Identity": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
@@ -3536,6 +3587,23 @@
       "OriginalItemSpec": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.IO.Compression.Brotli.dll"
     },
     {
+      "Identity": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\Debug\\net7.0\\build-gz\\+OP6gI1x.gz",
+      "SourceId": "CPS691BlazorApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazor.Extensions.Canvas.JS.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazor.Extensions.Canvas.JS.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazor.Extensions.Canvas.JS.dll"
+    },
+    {
       "Identity": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\Debug\\net7.0\\build-gz\\+qU58Mbo.gz",
       "SourceId": "CPS691BlazorApp",
       "SourceType": "Computed",
@@ -3942,6 +4010,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Text.RegularExpressions.dll"
+    },
+    {
+      "Identity": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\Debug\\net7.0\\build-gz\\5IPxUg9a.gz",
+      "SourceId": "CPS691BlazorApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazor.Extensions.Canvas.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazor.Extensions.Canvas.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazor.Extensions.Canvas.dll"
     },
     {
       "Identity": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\Debug\\net7.0\\build-gz\\63VUAvoc.gz",

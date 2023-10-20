@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8qbMr1fX2FXXNNlbillBA8/k1tKO0mnmbXERKBd81sDeN6qABoqmB6Y8TEa1OnLC60keWg44F1CeX6X92tZL4g==",
+  "dgSpecHash": "YbF8JD2Bwc9joC2BSf1IbVSalZcbCurE/w8JHVlFNJYhHljxt0R0jPfqjPk5F9xcxasn/ixIOiyrPB9h99I35A==",
   "success": true,
   "projectFilePath": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\steph\\.nuget\\packages\\blazor.extensions.canvas\\1.1.1\\blazor.extensions.canvas.1.1.1.nupkg.sha512",
     "C:\\Users\\steph\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.12\\microsoft.aspnetcore.authorization.7.0.12.nupkg.sha512",
     "C:\\Users\\steph\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.12\\microsoft.aspnetcore.components.7.0.12.nupkg.sha512",
     "C:\\Users\\steph\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\7.0.12\\microsoft.aspnetcore.components.analyzers.7.0.12.nupkg.sha512",
@@ -29,8 +30,9 @@
     "C:\\Users\\steph\\.nuget\\packages\\microsoft.jsinterop\\7.0.12\\microsoft.jsinterop.7.0.12.nupkg.sha512",
     "C:\\Users\\steph\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.12\\microsoft.jsinterop.webassembly.7.0.12.nupkg.sha512",
     "C:\\Users\\steph\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
+    "C:\\Users\\steph\\.nuget\\packages\\system.net.http.json\\7.0.1\\system.net.http.json.7.0.1.nupkg.sha512",
     "C:\\Users\\steph\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\steph\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\steph\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512",
     "C:\\Users\\steph\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.12\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.12.nupkg.sha512"
   ],
   "logs": []

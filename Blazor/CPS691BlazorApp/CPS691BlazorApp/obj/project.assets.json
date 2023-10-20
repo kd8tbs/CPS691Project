@@ -2,6 +2,30 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "Blazor.Extensions.Canvas/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "3.1.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/Blazor.Extensions.Canvas.JS.dll": {},
+          "lib/netstandard2.1/Blazor.Extensions.Canvas.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Blazor.Extensions.Canvas.JS.dll": {},
+          "lib/netstandard2.1/Blazor.Extensions.Canvas.dll": {
+            "related": ".pdb"
+          }
+        },
+        "build": {
+          "buildTransitive/Blazor.Extensions.Canvas.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazor.Extensions.Canvas.props": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/7.0.12": {
         "type": "package",
         "dependencies": {
@@ -428,6 +452,25 @@
         },
         "runtime": {
           "lib/net7.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Net.Http.Json/7.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "7.0.2"
+        },
+        "compile": {
+          "lib/net7.0/System.Net.Http.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Net.Http.Json.dll": {
             "related": ".xml"
           }
         },
@@ -457,7 +500,7 @@
           }
         }
       },
-      "System.Text.Json/7.0.0": {
+      "System.Text.Json/7.0.2": {
         "type": "package",
         "dependencies": {
           "System.Text.Encodings.Web": "7.0.0"
@@ -478,6 +521,30 @@
       }
     },
     "net7.0/browser-wasm": {
+      "Blazor.Extensions.Canvas/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "3.1.5"
+        },
+        "compile": {
+          "lib/netstandard2.1/Blazor.Extensions.Canvas.JS.dll": {},
+          "lib/netstandard2.1/Blazor.Extensions.Canvas.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Blazor.Extensions.Canvas.JS.dll": {},
+          "lib/netstandard2.1/Blazor.Extensions.Canvas.dll": {
+            "related": ".pdb"
+          }
+        },
+        "build": {
+          "buildTransitive/Blazor.Extensions.Canvas.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazor.Extensions.Canvas.props": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/7.0.12": {
         "type": "package",
         "dependencies": {
@@ -911,6 +978,25 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "System.Net.Http.Json/7.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "7.0.2"
+        },
+        "compile": {
+          "lib/net7.0/System.Net.Http.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Net.Http.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "System.Text.Encodings.Web/7.0.0": {
         "type": "package",
         "compile": {
@@ -927,7 +1013,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "System.Text.Json/7.0.0": {
+      "System.Text.Json/7.0.2": {
         "type": "package",
         "dependencies": {
           "System.Text.Encodings.Web": "7.0.0"
@@ -949,6 +1035,25 @@
     }
   },
   "libraries": {
+    "Blazor.Extensions.Canvas/1.1.1": {
+      "sha512": "G+ElSm24MPj3iU2adehrRbVEFQtIR8NPH5M9oBq+RhJ1/Bvit8z6CTaUTVkfiuhgmFVZKJ56D1OdnbZ0u1/lQQ==",
+      "type": "package",
+      "path": "blazor.extensions.canvas/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazor.extensions.canvas.1.1.1.nupkg.sha512",
+        "blazor.extensions.canvas.nuspec",
+        "build/Blazor.Extensions.Canvas.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazor.Extensions.Canvas.props",
+        "buildTransitive/Blazor.Extensions.Canvas.props",
+        "lib/netstandard2.1/Blazor.Extensions.Canvas.JS.dll",
+        "lib/netstandard2.1/Blazor.Extensions.Canvas.dll",
+        "lib/netstandard2.1/Blazor.Extensions.Canvas.pdb",
+        "staticwebassets/blazor.extensions.canvas.js"
+      ]
+    },
     "Microsoft.AspNetCore.Authorization/7.0.12": {
       "sha512": "z++ru5sKWIuYXhrrlIAOfRqeLtULY6RvjHLKVF5AP7zMmc/VK3WmQAbyno7VVqVojVtL5WDJ4z/+n5W8zMweqw==",
       "type": "package",
@@ -1691,6 +1796,33 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Net.Http.Json/7.0.1": {
+      "sha512": "ni8+BJnndbJI9AXme/qCYXg1s4RpdRJx3gKp5WzcWuLt4l3syuscgk5Becis6x4E7HbQk4z6A7FNXFQD75F+wQ==",
+      "type": "package",
+      "path": "system.net.http.json/7.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Net.Http.Json.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Net.Http.Json.targets",
+        "lib/net462/System.Net.Http.Json.dll",
+        "lib/net462/System.Net.Http.Json.xml",
+        "lib/net6.0/System.Net.Http.Json.dll",
+        "lib/net6.0/System.Net.Http.Json.xml",
+        "lib/net7.0/System.Net.Http.Json.dll",
+        "lib/net7.0/System.Net.Http.Json.xml",
+        "lib/netstandard2.0/System.Net.Http.Json.dll",
+        "lib/netstandard2.0/System.Net.Http.Json.xml",
+        "system.net.http.json.7.0.1.nupkg.sha512",
+        "system.net.http.json.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Text.Encodings.Web/7.0.0": {
       "sha512": "OP6umVGxc0Z0MvZQBVigj4/U31Pw72ITihDWP9WiWDm+q5aoe0GaJivsfYGq53o6dxH7DcXWiCTl7+0o2CGdmg==",
       "type": "package",
@@ -1722,10 +1854,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Text.Json/7.0.0": {
-      "sha512": "DaGSsVqKsn/ia6RG8frjwmJonfos0srquhw09TlT8KRw5I43E+4gs+/bZj4K0vShJ5H9imCuXupb4RmS+dBy3w==",
+    "System.Text.Json/7.0.2": {
+      "sha512": "/LZf/JrGyilojqwpaywb+sSz8Tew7ij4K/Sk+UW8AKfAK7KRhR6mKpKtTm06cYA7bCpGTWfYksIW+mVsdxPegQ==",
       "type": "package",
-      "path": "system.text.json/7.0.0",
+      "path": "system.text.json/7.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1788,7 +1920,7 @@
         "lib/net7.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.7.0.0.nupkg.sha512",
+        "system.text.json.7.0.2.nupkg.sha512",
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -1796,8 +1928,10 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Blazor.Extensions.Canvas >= 1.1.1",
       "Microsoft.AspNetCore.Components.WebAssembly >= 7.0.12",
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 7.0.12"
+      "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 7.0.12",
+      "System.Net.Http.Json >= 7.0.1"
     ]
   },
   "packageFolders": {
@@ -1839,6 +1973,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "Blazor.Extensions.Canvas": {
+            "target": "Package",
+            "version": "[1.1.1, )"
+          },
           "Microsoft.AspNetCore.Components.WebAssembly": {
             "target": "Package",
             "version": "[7.0.12, )"
@@ -1847,6 +1985,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[7.0.12, )"
+          },
+          "System.Net.Http.Json": {
+            "target": "Package",
+            "version": "[7.0.1, )"
           }
         },
         "imports": [
