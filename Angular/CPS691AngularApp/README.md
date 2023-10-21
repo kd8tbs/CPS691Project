@@ -1,27 +1,25 @@
 # CPS691AngularApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+## Setup before testing
+1) Install [Node Js](https://nodejs.org/en)
+2) Install the npm package handler. Use can use command line command: `npm install -g npm`
+3) Run `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` in the command line to allow angular to run scripts
+4) Install the Angular command line interface with the `npm install -g @angular/cli` command
+5) If you're running in VSCode you'll probably want to get the **Angular Essentials** extension
 
-## Development server
+## Testing
+1) Run `ng serve` in the command line for a local dev server. Navigate to `http://localhost:4200/`.
+2) The default page will be the Ball Animation page, fill out the form on the page:
+   - **Starting Number of Animations:** The number of animations to have in the test.
+   - **Starting Speed:** Will automatically set to 5.
+   - **Duration of Test:** The number of seconds to have the test run.
+3) Click the **Start Test** button, to begin the test.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Notes:** 
+- Filling out any of the other fields won't affect the program right now.
+- The **End Test** button will stop the test that is happening, but you will need to refresh to clear the page of animations.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Code Information
+The main files that relate to the ball animations are:
+- `ball.ts` A typescript class file that defines the parameters of a ball object. Path: src => app => Classes => `ball.ts`
+- `animation-ball.component.ts` A typescript file that does the heavy lifting for the ball animation. Path: src => app => Views => `animation-ball.component.ts`
