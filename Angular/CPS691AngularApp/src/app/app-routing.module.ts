@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ViewBallComponent } from './Views/view-ball/view-ball.component';
+import { AnimationBallComponent } from './Views/animation-ball/animation-ball.component';
 
 const routes: Routes = [
-  {path: 'Views/view-ball',  component: ViewBallComponent}
+  {path: 'Views/animation-ball',  component: AnimationBallComponent}
 ];
 
 @NgModule({

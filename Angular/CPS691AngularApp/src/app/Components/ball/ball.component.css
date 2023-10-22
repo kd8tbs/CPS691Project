@@ -1,8 +1,0 @@
-.ball{
-    width: 25px;
-    height: 25px;
-    background-color: rgb(255, 0, 0);
-    position: absolute;
-    border-radius: 50%;
-    box-sizing: border-box;
-}
