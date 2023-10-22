@@ -39,7 +39,7 @@
                         xVel: RandomVelocity(rand, minSpeed, maxSpeed),
                         yVel: RandomVelocity(rand, minSpeed, maxSpeed),
                         radius: radius,
-                        color: string.Format("#{0:X6}", rand.Next(0xFFFFFF))
+                        color: "#0000FF"
                     )
                 );
             }

@@ -24,10 +24,17 @@
 
     <script>
 
+        var animationFrameId = null;
+
         function renderJS(timeStamp) {
             theInstance.invokeMethodAsync('RenderInBlazor', timeStamp);
-            window.requestAnimationFrame(renderJS);
+            animationFrameId = window.requestAnimationFrame(renderJS);
         }
+
+        function stopRenderJS() {
+            window.cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+        }        
 
         function resizeCanvasToFitWindow() {
             var holder = document.getElementById('canvasHolder');
