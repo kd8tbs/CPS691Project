@@ -133,4 +133,4 @@ dist
 Blazor/CPS691BlazorApp/bin
 Blazor/CPS691BlazorApp/obj
 Blazor/CPS691BlazorApp/.vs
-*.suo
+/Blazor/CPS691BlazorApp/.vs/CPS691BlazorApp/v17/.suo
