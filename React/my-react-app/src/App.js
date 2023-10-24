@@ -9,7 +9,8 @@ class App extends Component {
         y: 50,
         dx: 5,
         dy: 5,
-        color: '#'+Math.floor(Math.random()*16777215).toString(16), // Random color
+        // color: '#'+Math.floor(Math.random()*16777215).toString(16), // Random color
+        color: '#3498db', // Blue color
       },
     ],
   };
@@ -20,9 +21,10 @@ class App extends Component {
 
   animateBalls = () => {
     const { ballPositions } = this.state;
-    const maxX = window.innerWidth;
-    const maxY = window.innerHeight;
-
+    // const maxX = window.innerWidth;
+    // const maxY = window.innerHeight;
+    const maxX = 900;
+    const maxY = 400;
     const newBallPositions = ballPositions.map(({ x, y, dx, dy, color }) => {
       let newBallX = x + dx;
       let newBallY = y + dy;
@@ -48,14 +50,15 @@ class App extends Component {
 
   increaseBalls = () => {
     const { balls, ballPositions } = this.state;
-    const maxX = window.innerWidth;
-    const maxY = window.innerHeight;
+    const maxX = 900;
+    const maxY = 400;
     const newBall = {
       x: Math.floor(Math.random() * maxX),
       y: Math.floor(Math.random() * maxY),
       dx: Math.floor(Math.random() * 10) - 5, // Random direction
       dy: Math.floor(Math.random() * 10) - 5, // Random direction
-      color: '#'+Math.floor(Math.random()*16777215).toString(16), // Random color
+      // color: '#'+Math.floor(Math.random()*16777215).toString(16), // Random color
+      color: '#3498db', // Blue color
     };
     this.setState({
       balls: balls + 1,
@@ -78,15 +81,16 @@ class App extends Component {
     const { balls, ballPositions } = this.state;
 
     if (value > balls) {
-      const maxX = window.innerWidth;
-      const maxY = window.innerHeight;
+      const maxX = 900;
+      const maxY = 400;
       const newBalls = value - balls;
       const newBallPositions = Array.from({ length: newBalls }, () => ({
         x: Math.floor(Math.random() * maxX),
         y: Math.floor(Math.random() * maxY),
         dx: Math.floor(Math.random() * 10) - 5, // Random direction
         dy: Math.floor(Math.random() * 10) - 5, // Random direction
-        color: '#'+Math.floor(Math.random()*16777215).toString(16), // Random color
+        // color: '#'+Math.floor(Math.random()*16777215).toString(16), // Random color
+        color: '#3498db', // Blue color
       }));
       this.setState({
         balls: parseInt(value),
@@ -118,7 +122,7 @@ class App extends Component {
           <button onClick={this.increaseBalls}>Add ball</button>
           <button onClick={this.decreaseBalls}>Remove ball</button>
         </div>
-        <div style={{ position: 'relative', zIndex: -1 }}>
+        <div style={{ position: 'relative', zIndex: -1, width: '900px', height: '400px', border: '1px solid black' }}>
           {ballPositions.map(({ x, y, color }, index) => (
             <div
               key={index}
