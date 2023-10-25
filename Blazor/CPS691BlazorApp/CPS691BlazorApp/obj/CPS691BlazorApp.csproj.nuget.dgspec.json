@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj": {}
+    "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj": {
+    "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
+        "projectUniqueName": "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
         "projectName": "CPS691BlazorApp",
-        "projectPath": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
-        "packagesPath": "C:\\Users\\steph\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\",
+        "projectPath": "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
+        "packagesPath": "C:\\Users\\kd8tb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\steph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kd8tb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
