@@ -13,19 +13,13 @@
         <label for="nbAnimations">Number of animations</label>
         <input id="nbAnimations" name="nbAnimations" min="1" max="99999" @bind-value=NbAnimations type="number" />
     </div>
-    @* <div class="form-group mb-3">
-        <label for="nbTests">Number of tests</label>
-        <input id="nbTests" name="nbTests" min="1" max="9" @bind-value=NbTests type="number" />
-    </div> *@
     <div class="form-group mb-3">
         <label for="duration">Test duration (in seconds)</label>
         <input id="duration" name="duration" min="1" max="999" @bind-value=Duration type="number" />
     </div>
     <div>
         <button class="btn btn-success" @onclick="Start" @onclick:preventDefault="true" @onclick:stopPropagation="true">Start test</button>
-        <button class="btn btn-danger" @onclick="Stop2" @onclick:preventDefault="true" @onclick:stopPropagation="true">Stop test</button>
-        @* <button class="btn btn-danger">Decrease speed</button>
-        <button class="btn btn-success">Increase speed</button> *@
+        <button class="btn btn-danger" @onclick="Stop" @onclick:preventDefault="true" @onclick:stopPropagation="true">Stop test</button>
     </div>
 </form>
 
@@ -58,7 +52,7 @@
         await JsRuntime.InvokeAsync<object>("stopRenderJS");
     }
 
-    private async Task Stop2()
+    private async Task StopWithDelay()
     {
         await Task.Delay(Duration * 1000);
         await JsRuntime.InvokeAsync<object>("stopRenderJS");
@@ -103,6 +97,6 @@
 
         await this.ctx.EndBatchAsync();
         Console.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")} - FPS: {fps:0.000}");
-        await Stop2();
+        await StopWithDelay();
     }
 }
