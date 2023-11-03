@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './Components/button/button.component';
 import { AnimationBallComponent } from './Views/animation-ball/animation-ball.component';
+import { AnimationFadeComponent } from './Views/animation-fade/animation-fade.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
-    AnimationBallComponent
+    AnimationBallComponent,
+    AnimationFadeComponent
   ],
   imports: [
     BrowserModule,
