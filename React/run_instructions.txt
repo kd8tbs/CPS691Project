@@ -2,3 +2,12 @@ install npm
 enter my-react-app
 run 'npm install' (if it is the first time running
 run 'npm start'
+
+
+
+
+radius 10px
+speed |5|
+color blue
+window size 900X400
+

@@ -1935,19 +1935,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\steph\\.nuget\\packages\\": {}
+    "C:\\Users\\kd8tb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
+      "projectUniqueName": "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
       "projectName": "CPS691BlazorApp",
-      "projectPath": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
-      "packagesPath": "C:\\Users\\steph\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\",
+      "projectPath": "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
+      "packagesPath": "C:\\Users\\kd8tb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\steph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kd8tb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
