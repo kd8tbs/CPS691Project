@@ -28,7 +28,7 @@
 </div>
 
 @code {
-    private Models.Field BallField = new Models.Field();
+    private Models.SquareField SquareField = new Models.SquareField();
 
     private Canvas2DContext ctx;
     protected BECanvasComponent _canvasReference;
@@ -59,38 +59,39 @@
     }
 
     [JSInvokable]
-    public void ResizeInBlazor(double width, double height) => BallField.Resize(width, height);
+    public void ResizeInBlazor(double width, double height) => SquareField.Resize(width, height);
 
     [JSInvokable]
     public async ValueTask RenderInBlazor(float timeStamp)
     {
-        if (BallField.Balls.Count == 0)
-            BallField.AddRandomBalls(NbAnimations);
+        if (SquareField.Squares.Count == 0)
+            SquareField.AddRandomSquares(NbAnimations);
 
         double fps = 1.0 / (DateTime.Now - LastRender).TotalSeconds;
         LastRender = DateTime.Now;
 
-        BallField.StepForward();
+        SquareField.StepForward();
 
         await this.ctx.BeginBatchAsync();
 
-        await this.ctx.ClearRectAsync(0, 0, BallField.Width, BallField.Height);
+        await this.ctx.ClearRectAsync(0, 0, SquareField.Width, SquareField.Height);
         await this.ctx.SetFillStyleAsync("#FFFFFF");
-        await this.ctx.FillRectAsync(0, 0, BallField.Width, BallField.Height);
+        await this.ctx.FillRectAsync(0, 0, SquareField.Width, SquareField.Height);
 
-        await this.ctx.SetFontAsync("26px Segoe UI");
-        await this.ctx.SetFillStyleAsync("#000000");
-        await this.ctx.FillTextAsync("Bouncing Balls", 10, 30);
+        //await this.ctx.SetFontAsync("26px Segoe UI");
+        //await this.ctx.SetFillStyleAsync("#000000");
+        //await this.ctx.FillTextAsync("Fading Squares", 10, 30);
 
-        await this.ctx.SetFontAsync("16px consolas");
-        await this.ctx.FillTextAsync($"FPS: {fps:0.000}", 10, 50);
+        //await this.ctx.SetFontAsync("16px consolas");
+        //await this.ctx.FillTextAsync($"FPS: {fps:0.000}", 10, 50);
 
         await this.ctx.SetStrokeStyleAsync("#000000");
-        foreach (var ball in BallField.Balls)
+        foreach (var square in SquareField.Squares)
         {
             await this.ctx.BeginPathAsync();
-            await this.ctx.ArcAsync(ball.X, ball.Y, ball.R, 0, 2 * Math.PI, false);
-            await this.ctx.SetFillStyleAsync(ball.Color);
+            await this.ctx.RectAsync(square.X, square.Y, 20, 20);
+            await this.ctx.SetFillStyleAsync(square.Color);
+            await this.ctx.SetGlobalAlphaAsync(square.Opacity);
             await this.ctx.FillAsync();
             await this.ctx.StrokeAsync();
         }

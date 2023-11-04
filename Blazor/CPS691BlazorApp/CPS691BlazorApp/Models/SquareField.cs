@@ -12,7 +12,7 @@
         public void StepForward()
         {
             foreach (Square square in Squares)
-                square.StepForward(Width, Height);
+                square.StepForward();
         }        
 
         public void AddRandomSquares(int count = 10)
