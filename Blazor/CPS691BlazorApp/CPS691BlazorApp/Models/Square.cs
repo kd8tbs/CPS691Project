@@ -7,32 +7,22 @@
         public string Color { get; private set; }
         public float Opacity { get; private set; }
 
-        private bool decreaseOpacity = true;
-
         public Square(double x, double y, string color, float opacity)
         {
             (X, Y, Color, Opacity) = (x, y, color, opacity);
         }
 
-        public void StepForward()
-        { 
-            if (decreaseOpacity)
-            {
-                Opacity -= .05f;
-            }
-            else
-            {
-                Opacity += .05f;
-            }
+        public void StepForward(double width, double height)
+        {
+            Opacity -= .04f;            
 
             if (Opacity <= 0)
             {
-                decreaseOpacity = false;
-            }
-            else if (Opacity >= 1)
-            {
-                decreaseOpacity = true;
-            }
+                Random rand = new Random();
+                X = width * rand.NextDouble();
+                Y = height * rand.NextDouble();
+                Opacity = 1;
+            }            
         }
     }
 }

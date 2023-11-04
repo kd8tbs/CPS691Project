@@ -78,13 +78,6 @@
         await this.ctx.SetFillStyleAsync("#FFFFFF");
         await this.ctx.FillRectAsync(0, 0, BallField.Width, BallField.Height);
 
-        // await this.ctx.SetFontAsync("26px Segoe UI");
-        // await this.ctx.SetFillStyleAsync("#000000");
-        // await this.ctx.FillTextAsync("Bouncing Balls", 10, 30);
-
-        // await this.ctx.SetFontAsync("16px consolas");
-        // await this.ctx.FillTextAsync($"FPS: {fps:0.000}", 10, 50);
-
         await this.ctx.SetStrokeStyleAsync("#000000");
         foreach (var ball in BallField.Balls)
         {
