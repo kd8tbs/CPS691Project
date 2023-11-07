@@ -5,6 +5,8 @@
 # install chrome driver from https://chromedriver.chromium.org/downloads
 # modify the chrome_driver_path variable to point to the location of the chrome driver
 chrome_driver_path = "C:\\ProgramData\\chocolatey\\bin\\chromedriver.exe"
+# point this to wherever you have the chrome for testing installed
+chrome_binary_path = 'C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\local\\chrome-win64\\chrome.exe'
 # modify the url variable to point to the url of the website you want to test
 url = "https://www.google.com/"
 # modify the test_duration variable to change the length of the test (in seconds)
@@ -102,6 +104,7 @@ def get_chrome_power_consumption(pid):
 # Initialize Chrome WebDriver
 chrome_service = ChromeService(chrome_driver_path)
 chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = chrome_binary_path  # Specify the path to the Chrome binary
 # Create a Chrome browser instance with the performance logging capability
 chrome_options.add_argument('--enable-logging=performance')
 options = webdriver.ChromeOptions()
