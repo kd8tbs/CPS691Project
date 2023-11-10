@@ -9,6 +9,14 @@ chrome_driver_path = "C:\\ProgramData\\chocolatey\\bin\\chromedriver.exe"
 chrome_binary_path = 'C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\local\\chrome-win64\\chrome.exe'
 # modify the url variable to point to the url of the website you want to test
 url = "https://www.google.com/"
+
+test_stite_dict = {
+    'Angular' : [], 
+    'React' : [], 
+    'Vue' : [], 
+    'Blazor' : []
+}
+
 # modify the test_duration variable to change the length of the test (in seconds)
 test_duration = 10
 # modify the csv_file output path
@@ -21,7 +29,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import psutil
 
-
+# ===============================  MEASUREMENT FUNCTIONS ============================
 
 # Function to measure memory usage of the Chrome process
 def get_chrome_memory_usage(pid):
@@ -101,6 +109,19 @@ def get_chrome_power_consumption(pid):
         return None
 
 
+# ===========================  TEST IMPLEMENTATION ======================
+def write_csv_for_test():
+    print("This is a placeholder")
+    #Print the results with custom filename IE: Angular_performance_results_1
+
+def test_webpage(duration, urls_to_webpages):
+    #Iterate over each URL and run tests 
+    for url in urls_to_webpages:
+        url = 0
+        #Run tests on each webpage for the determined amount of time
+        write_csv_for_test() #Write results to a CSV
+        #Quit the driver 
+
 # Initialize Chrome WebDriver
 chrome_service = ChromeService(chrome_driver_path)
 chrome_options = webdriver.ChromeOptions()
@@ -115,6 +136,13 @@ print(driver.capabilities['browserVersion'])
 print(driver.capabilities['chrome']['chromedriverVersion'].split(' ')[0])
 # Create a CSV file to store the results
 # modify name for test
+
+# Ask the user to input the number of seconds to run each test, then begin the test. 
+test_duration = 0
+# Ask the user what test they would like to run
+test_webpage(test_duration, url)
+
+
 
 # Open the web page and start logging performance data
 driver.get(url)
