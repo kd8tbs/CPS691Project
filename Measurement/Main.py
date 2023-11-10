@@ -1,21 +1,26 @@
 # Instructions to run script:
 # install python and install dependencies via pip with the command:
+# install this specific version of chrome and make sure chromedriver version matches! https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win64/chrome-win64.zip
 # pip install selenium psutil
 # install chrome driver from https://chromedriver.chromium.org/downloads
 # modify the chrome_driver_path variable to point to the location of the chrome driver
 chrome_driver_path = "C:\\ProgramData\\chocolatey\\bin\\chromedriver.exe"
+# point this to wherever you have the chrome for testing installed
+chrome_binary_path = 'C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\local\\chrome-win64\\chrome.exe'
 # modify the url variable to point to the url of the website you want to test
-url = "http://localhost:4200/"
+url = "https://www.google.com/"
 # modify the test_duration variable to change the length of the test (in seconds)
-test_duration = 300
+test_duration = 10
 # modify the csv_file output path
-csv_file = "angular_performance_results.csv"
+csv_file = "test_results.csv"
 import time
 import csv
 import psutil
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+import psutil
+
 
 
 # Function to measure memory usage of the Chrome process
@@ -55,37 +60,59 @@ def get_current_frame_rate(driver):
     
 
 
-# This is a hacky way to get the website frame rate. It works by measuring the time it takes to scroll the page by 1 pixel. It is not the most accurate but it is the best I can do with the deadline.
 def estimate_frame_rate(driver):
-    frame_start_time = time.time()
-    driver.execute_script("performance.mark('frame_start');")
-    # Perform some action that causes rendering, such as scrolling, clicking, or loading a new page element
-    # For example, you can scroll the page to trigger a reflow.
-    driver.execute_script("window.scrollTo(0, 1);")
-    driver.execute_script("performance.mark('frame_end');")
-    frame_end_time = time.time()
-    
-    # Calculate the frame rate
-    frame_duration = (frame_end_time - frame_start_time) * 1000  # Convert to milliseconds
-    try:
-        frame_rate = 1000 / frame_duration  # Calculate frame rate in frames per second (FPS)
-    except ZeroDivisionError:
-        print("Error: Division by zero")
-        frame_rate = 60  # Assume 60 FPS if division by zero occurs
-    return int(frame_rate)
+    # Define a JavaScript function to measure the frame rate
+    script = """
+    var callback = arguments[0];
+    new Promise(function(resolve, reject) {
+        var lastTime = performance.now();
+        var frameCount = 0;
+        function measureFrameRate(time) {
+            frameCount++;
+            var deltaTime = time - lastTime;
+            if (deltaTime >= 1000) {  // Calculate FPS every second
+                var fps = frameCount / (deltaTime / 1000);
+                resolve(fps);
+                lastTime = time;
+                frameCount = 0;
+            } else {
+                requestAnimationFrame(measureFrameRate);
+            }
+        }
+        requestAnimationFrame(measureFrameRate);
+    }).then(function(fps) {
+        callback(fps);
+    });
+    """
+    # Set a longer script timeout
+    driver.set_script_timeout(5)
+    # Execute the script asynchronously
+    frame_rate = driver.execute_async_script(script)
+    return frame_rate
 
+
+def get_chrome_power_consumption(pid):
+    try:
+        process = psutil.Process(pid)
+        power_usage = process.cpu_percent() / 100  # CPU usage as a fraction
+        return power_usage
+    except Exception as e:
+        print(f"Error while getting power consumption: {e}")
+        return None
 
 
 # Initialize Chrome WebDriver
 chrome_service = ChromeService(chrome_driver_path)
 chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = chrome_binary_path  # Specify the path to the Chrome binary
 # Create a Chrome browser instance with the performance logging capability
 chrome_options.add_argument('--enable-logging=performance')
 options = webdriver.ChromeOptions()
 options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})
 #chrome_options.add_argument("--headless")  # Run Chrome in headless mode
 driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
-
+print(driver.capabilities['browserVersion'])
+print(driver.capabilities['chrome']['chromedriverVersion'].split(' ')[0])
 # Create a CSV file to store the results
 # modify name for test
 
@@ -94,7 +121,7 @@ driver.get(url)
 
 
 with open(csv_file, 'w', newline='') as csvfile:
-    fieldnames = ['Time (s)', 'Memory Usage (MB)', 'Frame Rate (FPS)']
+    fieldnames = ['Time (s)', 'Memory Usage (MB)', 'Frame Rate (FPS)', 'Power Consumption (W)']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
     fps_counter = 0
@@ -102,9 +129,11 @@ with open(csv_file, 'w', newline='') as csvfile:
     while time.time() - start_time < test_duration:
         time_elapsed = time.time() - start_time
         memory_usage = get_chrome_memory_usage(driver.service.process.pid)
-        frame_rate = estimate_frame_rate(driver) # TODO make the better implementation work
-        writer.writerow({'Time (s)': time_elapsed, 'Memory Usage (MB)': memory_usage, 'Frame Rate (FPS)': frame_rate})
+        frame_rate = estimate_frame_rate(driver)
+        power_consumption = get_chrome_power_consumption(driver.service.process.pid)
+        writer.writerow({'Time (s)': time_elapsed, 'Memory Usage (MB)': memory_usage, 'Frame Rate (FPS)': frame_rate, 'Power Consumption (W)': power_consumption})
         time.sleep(1)
+
 end_time = time.time()
 fps = fps_counter / (end_time - start_time)
 print(f"FPS: {fps}")
