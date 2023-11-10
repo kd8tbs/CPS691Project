@@ -3,6 +3,7 @@
     <nav>
       <router-link to="/">Landing Page</router-link>
       <router-link to="/bouncing-balls">Bouncing Balls</router-link>
+      <router-link to="/fade-in-fade-out">Fade In Fade Out</router-link>
     </nav>
     <router-view />
   </div>
