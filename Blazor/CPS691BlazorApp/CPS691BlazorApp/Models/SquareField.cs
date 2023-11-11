@@ -13,7 +13,13 @@
         {
             foreach (Square square in Squares)
                 square.StepForward(Width, Height);
-        }        
+        }
+
+        public void NextPulse()
+        {
+            foreach (Square square in Squares)
+                square.NextPulse();
+        }
 
         public void AddRandomSquares(int count = 10)
         {
@@ -26,7 +32,9 @@
                         x: Width * rand.NextDouble(),
                         y: Height * rand.NextDouble(),
                         color: "#0000FF",
-                        opacity: 1
+                        opacity: 1,
+                        width: 20,
+                        height: 20
                     )
                 );
             }
