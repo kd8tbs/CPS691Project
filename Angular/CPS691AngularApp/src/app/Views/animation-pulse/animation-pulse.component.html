@@ -1,9 +1,10 @@
 <div class="main-container">
     <div class="header">
-        <h1>Bouncing Balls</h1>
+        <h1>Pulse Animation</h1>
     </div>
     <div class="animation-container">
-        <canvas #canvas height="400" width="900"></canvas>
+        <div #animationCanvas class='animation-canvas'> 
+        </div>
     </div>
     <div class="form-container">
         <form #testForm="ngForm" (ngSubmit)="onSubmit()">
@@ -12,8 +13,8 @@
                 <input type="number" id="animationAmount" name="animationAmount" [(ngModel)]="animationAmount">
             </div>
             <div class="form-group">
-                <label for="animationSpeed">Animation Speed (ms):  </label>
-                <input type="number" id="animationSpeed" name="animationSpeed" [(ngModel)]="animationSpeed">
+                <label for="animationIntervalDuration">Animation Transition Speed (ms):  </label>
+                <input type="number" id="animationIntervalDuration" name="animationIntervalDuration" [(ngModel)]="animationIntervalDuration">
             </div>
             <div class="form-group">
                 <div class="form-group-buttons">
