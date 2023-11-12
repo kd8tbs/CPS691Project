@@ -9,9 +9,23 @@ const Square = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      const duration = 5; // Set the total duration for growth and shrink animations
+
       tl.current
-        .to(squareRef.current, { scale: 10, duration: 5 })
-        .to(squareRef.current, { scale: 0, duration: 5 })
+        .to(squareRef.current, { scale: 10, duration })
+        .fromTo(
+          squareRef.current,
+          { backgroundColor: 'red' },
+          { backgroundColor: 'blue', duration: duration / 2 },
+          0 // Start color transition at the beginning of the timeline
+        )
+        .to(squareRef.current, { scale: 0, duration })
+        .fromTo(
+          squareRef.current,
+          { backgroundColor: 'blue' },
+          { backgroundColor: 'red', duration: duration / 2 },
+          `-=${duration / 2}` // Start color transition halfway through the timeline
+        )
         .eventCallback('onRepeat', () => {
           setTop(Math.random() * 400);
           setLeft(Math.random() * 900);
