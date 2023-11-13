@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit} from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 //Static animation duration, because Angular animations don't allow for dyanmic duration change
@@ -42,10 +42,11 @@ export class AnimationFadeComponent implements OnInit {
   public animationIntervalDuration: number = 2000; //The miliseconds it takes to complete a full fade in/out animation
 
   ngOnInit(): void {
-      this.animateSquares(this.animationAmount, this.animationIntervalDuration);
+    this.animateSquares(this.animationAmount, this.animationIntervalDuration);
   }
 
   public onSubmit(){
+    this.endTest();
     this.animateSquares(this.animationAmount, this.animationIntervalDuration);
   }
 

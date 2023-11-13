@@ -12,6 +12,7 @@ export class AnimationBallComponent{
   private ctx: CanvasRenderingContext2D;
   public balls : Ball[] = [];
   public isAnimationRunning: boolean = false;
+  private animationFrameID: number;
 
   // Default values for test
   public animationAmount: number = 20;
@@ -25,6 +26,7 @@ export class AnimationBallComponent{
   }
 
   onSubmit() {
+    this.endTest(); //End the current test
     this.startTest();
     this.generateBalls(this.animationAmount, this.animationSpeed);
     this.animateBalls();
@@ -67,7 +69,7 @@ export class AnimationBallComponent{
     }
     
     //Repeat the cycle
-    requestAnimationFrame(() => this.animateBalls());
+    this.animationFrameID = requestAnimationFrame(() => this.animateBalls());
   }
 
   drawBall(ball: Ball) {
@@ -80,6 +82,7 @@ export class AnimationBallComponent{
 
   endTest(){
     this.isAnimationRunning = false;
+    cancelAnimationFrame(this.animationFrameID); // Cancel the animation frame
     this.balls = []; // Clear the array of balls
     this.ctx.clearRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height); // Clear the canvas
   }

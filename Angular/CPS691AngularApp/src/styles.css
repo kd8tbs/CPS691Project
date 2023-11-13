@@ -15,14 +15,14 @@
   flex-direction: row;
   justify-content: space-between;
   max-width: 900px; /* Adjust the max-width as needed */
-  margin: 10px auto; /* Center the form and provide margin */
+  margin: auto; /* Center the form and provide margin */
 }
 
 .form-group {
   display: inline-block;
   justify-content: center;
-  margin-top: 10px; /* Adjust the margin as needed */
-  margin-bottom: 10px;
+  margin-top: 5px; /* Adjust the margin as needed */
+  margin-bottom: 5px;
   width: 50%; /* Adjust the width as needed, accounting for margin/padding */
   /*margin: 5px; /* Add margin as needed */
 }
@@ -67,6 +67,14 @@ canvas{
 }
 
 footer{
-  height: 30px;
-  color: red;
+  height: 10px;
+  text-align: center;
+}
+
+a {
+  margin-left: 15px;
+}
+
+h3 {
+  margin: 0;
 }
