@@ -6,19 +6,20 @@
 # modify the chrome_driver_path variable to point to the location of the chrome driver
 chrome_driver_path = "C:\\ProgramData\\chocolatey\\bin\\chromedriver.exe"
 # point this to wherever you have the chrome for testing installed
-chrome_binary_path = 'C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\local\\chrome-win64\\chrome.exe'
+chrome_binary_path = 'C:\\Program Files\\Google\\chrome-win64\\chrome.exe'
+#chrome_binary_path = 'C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\local\\chrome-win64\\chrome.exe'
 # modify the url variable to point to the url of the website you want to test
-url = "https://www.google.com/"
+url = 'http://localhost:4200/Views/animation-pulse' #"https://www.google.com/"
 
-test_stite_dict = {
-    'Angular' : [], 
+test_site_dict = {
+    'Angular' : ['http://localhost:4200/Views/animation-ball', 'http://localhost:4200/Views/animation-fade', 'http://localhost:4200/Views/animation-pulse'], 
     'React' : [], 
     'Vue' : [], 
     'Blazor' : []
 }
 
 # modify the test_duration variable to change the length of the test (in seconds)
-test_duration = 10
+test_duration = 300000
 # modify the csv_file output path
 csv_file = "test_results.csv"
 import time
@@ -98,7 +99,6 @@ def estimate_frame_rate(driver):
     frame_rate = driver.execute_async_script(script)
     return frame_rate
 
-
 def get_chrome_power_consumption(pid):
     try:
         process = psutil.Process(pid)
@@ -127,25 +127,31 @@ chrome_service = ChromeService(chrome_driver_path)
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = chrome_binary_path  # Specify the path to the Chrome binary
 # Create a Chrome browser instance with the performance logging capability
+chrome_options.add_argument('start-maximized')
+chrome_options.add_argument('disable-infobars')
 chrome_options.add_argument('--enable-logging=performance')
-options = webdriver.ChromeOptions()
-options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})
+chrome_options.add_argument("--disable-notifications")
+chrome_options.add_experimental_option("excludeSwitches",["enable-automation"])
+chrome_options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})
 #chrome_options.add_argument("--headless")  # Run Chrome in headless mode
-driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
+driver =  webdriver.Chrome(service=chrome_service, options=chrome_options)
 print(driver.capabilities['browserVersion'])
 print(driver.capabilities['chrome']['chromedriverVersion'].split(' ')[0])
 # Create a CSV file to store the results
 # modify name for test
 
 # Ask the user to input the number of seconds to run each test, then begin the test. 
-test_duration = 0
+test_duration = 300
 # Ask the user what test they would like to run
 test_webpage(test_duration, url)
 
-
-
 # Open the web page and start logging performance data
+# Measure page load time 
+start = time.time()
 driver.get(url)
+end = time.time()
+page_load_time = (end - start)
+print(page_load_time)
 
 
 with open(csv_file, 'w', newline='') as csvfile:
