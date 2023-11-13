@@ -1,17 +1,15 @@
 <div class="main-container">
     <div class="header">
-        <h1>Fading Squares</h1>
+        <h1>Pulse Animation</h1>
     </div>
     <div class="animation-container">
         <div #animationCanvas class='animation-canvas'>
-            <div *ngIf="showAnimation" @fadeIn @fadeOut>
-                <div
-                class="square"
-                *ngFor="let square of squares"
-                [style.left.px]="square.x"
-                [style.top.px]="square.y"
-                ></div>
-            </div>    
+            <div 
+            class="square"
+            *ngFor="let square of squares"
+            [style.left.px]="square.x"
+            [style.top.px]="square.y"
+            [@growShrink]="isGrowing ? 'grow' : 'shrink'"></div>    
         </div>
     </div>
     <div class="form-container">
@@ -35,7 +33,3 @@
         </form>
     </div> 
 </div>
-
-
-
-  

@@ -1,8 +1,11 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit} from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 
-const animationDuration = '1000ms';
+//Static animation duration, because Angular animations don't allow for dyanmic duration change
+const animationDuration = '1000ms'; 
+// ADJUST THIS TO CHANGE ANIMATION SPEED, AND CHANGE THE ANIMATION INTERVAL DURATION ACCORDINGLY
 
+//Animation transitions
 const enterTransition = transition(':enter', [
   style({ opacity: 0 }),
   animate(animationDuration, style({ opacity: 1 }))
@@ -13,6 +16,7 @@ const leaveTrans = transition(':leave', [
   animate(animationDuration, style({ opacity: 0 }))
 ]);
 
+//Animation triggers
 const fadeIn = trigger('fadeIn', [
   enterTransition
 ]);
@@ -33,29 +37,34 @@ export class AnimationFadeComponent implements OnInit {
   public showAnimation: boolean = false;
   public intervalID;
 
-  //Test Variables
+  //Default variables for test
   public animationAmount: number = 50;
-  public animationIntervalDuration: number = 2000;
+  public animationIntervalDuration: number = 2000; //The miliseconds it takes to complete a full fade in/out animation
 
   ngOnInit(): void {
-      this.animateSquares(this.animationAmount, this.animationIntervalDuration);
+    this.animateSquares(this.animationAmount, this.animationIntervalDuration);
   }
 
   public onSubmit(){
+    this.endTest();
     this.animateSquares(this.animationAmount, this.animationIntervalDuration);
   }
 
   private animateSquares(numberOfSquares, intervalDuration){
+    //Set an interval to continuously loop
     this.intervalID = setInterval(() => this.intervalFunction(intervalDuration, numberOfSquares), intervalDuration);
   }
 
   private intervalFunction(intervalDuration, numberOfSquares) {
+    //Initialize squares
     this.squares = [];
     for (let i = 0; i < numberOfSquares; i++){
       this.addSquare();
     }
 
+    //Fade-in animation
     this.showSquares();
+    //Fade-out halfway through the intervalDuration
     setTimeout(() => this.hideSquares(), intervalDuration / 2);
   }
 

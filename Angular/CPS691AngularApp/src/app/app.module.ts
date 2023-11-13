@@ -9,13 +9,17 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './Components/button/button.component';
 import { AnimationBallComponent } from './Views/animation-ball/animation-ball.component';
 import { AnimationFadeComponent } from './Views/animation-fade/animation-fade.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { AnimationPulseComponent } from './Views/animation-pulse/animation-pulse.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
     AnimationBallComponent,
-    AnimationFadeComponent
+    AnimationFadeComponent,
+    FooterComponent,
+    AnimationPulseComponent
   ],
   imports: [
     BrowserModule,

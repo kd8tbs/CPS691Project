@@ -7,46 +7,45 @@ import { Ball } from 'src/app/Classes/ball';
   styleUrls: ['./animation-ball.component.css'],
 })
 
-export class AnimationBallComponent {
+export class AnimationBallComponent{
   @ViewChild('canvas') canvas: ElementRef;
   private ctx: CanvasRenderingContext2D;
   public balls : Ball[] = [];
   public isAnimationRunning: boolean = false;
+  private animationFrameID: number;
 
-  public startAnimationAmount: number = 0;
-  public startSpeed: number = 5;
-  public testDuration: number = 0;
-
-  //Variables not being used right now
-  public incrementDuration: number = 0;
-  public animationIncrement: number = 0;
-  public speedIncrement: number = 0;
-
+  // Default values for test
+  public animationAmount: number = 20;
+  public animationSpeed: number = 5;
+  
   ngAfterViewInit(){
     this.ctx = this.canvas.nativeElement.getContext('2d');
+    this.startTest();
+    this.generateBalls(this.animationAmount, this.animationSpeed);
+    this.animateBalls();
   }
 
   onSubmit() {
+    this.endTest(); //End the current test
+    this.startTest();
+    this.generateBalls(this.animationAmount, this.animationSpeed);
+    this.animateBalls();
+  }
+
+  generateBalls(ballCount, ballSpeed){
     //Variables for initializing balls
     const ballRadius: number = 10;
     const ballColor: string = '#0000ff';
-    const ballSpeed = this.startSpeed; //Set to 5 rn
-    const ballAmount = this.startAnimationAmount;
-  
+
     //Add the determined amount of balls to the animation
-    for (let i = 0; i < ballAmount; i++){
+    for (let i = 0; i < ballCount; i++){
       let start_x: number = Math.floor(Math.random() * 900);
       let start_y: number = Math.floor(Math.random() * 400);
       this.balls.push(new Ball(start_x, start_y, ballSpeed, ballSpeed, ballRadius, ballColor))
     }
-
-    //Begin testing
-    this.startTest();
-    const animationStartTime = Date.now();
-    this.animateBalls(animationStartTime);
   }
 
-  animateBalls(startTime){
+  animateBalls(){
     //Stop the animation from continuing if animation isn't running
     if(!this.isAnimationRunning){
       return;
@@ -57,8 +56,9 @@ export class AnimationBallComponent {
 
     //Iterate through aray of balls, adjusting cordinates
     for (const ball of this.balls){
+      //stepForward() moves the ball based on an X and Y axis
       ball.stepForward(canvas.width, canvas.height);
-        // Check if the ball has hit a boundary and reverse its velocity if needed
+        //Check if the ball has hit a boundary and reverse its velocity if needed
       if (ball._x - ball._radius <= 0 || ball._x + ball._radius >= canvas.width) {
         ball._xVel *= -1;
       }
@@ -68,11 +68,8 @@ export class AnimationBallComponent {
       this.drawBall(ball);
     }
     
-    if(this.isTestOver(startTime)){
-      this.endTest();
-    }else{
-      requestAnimationFrame(() => this.animateBalls(startTime));
-    }
+    //Repeat the cycle
+    this.animationFrameID = requestAnimationFrame(() => this.animateBalls());
   }
 
   drawBall(ball: Ball) {
@@ -85,14 +82,12 @@ export class AnimationBallComponent {
 
   endTest(){
     this.isAnimationRunning = false;
+    cancelAnimationFrame(this.animationFrameID); // Cancel the animation frame
+    this.balls = []; // Clear the array of balls
+    this.ctx.clearRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height); // Clear the canvas
   }
 
   startTest(){
     this.isAnimationRunning = true;
-  }
-
-  isTestOver(startTime){
-    const elapsedTime = Date.now() - startTime;
-    return elapsedTime >= (this.testDuration * 1000); //Converted testDuration from seconds to miliseconds. 
   }
 }
