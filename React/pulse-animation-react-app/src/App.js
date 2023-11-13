@@ -11,7 +11,12 @@ const App = () => {
 
   return (
     <div style={{ position: 'relative', width: '900px', height: '400px' }}>
-      <input type="number" value={numSquares} onChange={handleInputChange} />
+      <input 
+        type="number" 
+        value={numSquares} 
+        onChange={handleInputChange} 
+        style={{ marginBottom: '100px' }}
+      />
       {squares.map((_, i) => (
         <Square key={i} />
       ))}
