@@ -30,6 +30,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import psutil
+import subprocess
+import re
 
 # ===============================  MEASUREMENT FUNCTIONS ============================
 
@@ -100,15 +102,24 @@ def estimate_frame_rate(driver):
     frame_rate = driver.execute_async_script(script)
     return frame_rate
 
-def get_chrome_usage_percentage(pid):
+def get_chrome_usage_percentage(process):
     try:
-        process = psutil.Process(pid)
-        power_usage = process.cpu_percent() / 100  # CPU usage as a fraction
-        return power_usage
+        return process.cpu_percent(interval=0.1) / 100  # CPU usage as a fraction
     except Exception as e:
         print(f"Error while getting power consumption: {e}")
         return None
 
+# def get_power_consumption(process):
+#     try:
+#         cpu_percent = process.cpu_percent(interval=None)
+        
+#         # Convert power consumption from percentage to milliwatts
+#         total_power_consumption = cpu_percent * psutil.cpu_freq().current * 10  # Assuming 10 mW per 1% CPU load
+
+#         return total_power_consumption
+#     except psutil.NoSuchProcess as e:
+#         print(f"Error: {e}")
+#         return None
 
 # ===========================  TEST IMPLEMENTATION ======================
 # def write_csv_for_test():
@@ -162,12 +173,14 @@ with open(csv_file, 'w', newline='') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
     start_time = time.time()
-    previous_cpu_usage = None
+    process = psutil.Process(driver.service.process.pid)
+    process.cpu_percent(interval=0.1)
     while time.time() - start_time < test_duration:
         time_elapsed = time.time() - start_time
         memory_usage = get_chrome_memory_usage(driver.service.process.pid)
         frame_rate = estimate_frame_rate(driver)
-        current_cpu_usage = get_chrome_usage_percentage(driver.service.process.pid)
+        current_cpu_usage = get_chrome_usage_percentage(process)
+        # power_consumption = get_power_consumption(process)
         writer.writerow({'Time (s)': time_elapsed, 'Memory Usage (MB)': memory_usage, 'Frame Rate (FPS)': frame_rate, 'CPU Percentage': current_cpu_usage})
         previous_cpu_usage = current_cpu_usage
         time.sleep(1)
