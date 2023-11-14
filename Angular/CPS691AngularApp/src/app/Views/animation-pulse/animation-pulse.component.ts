@@ -12,8 +12,8 @@ const animationTransition = '500ms ease-in-out';
   styleUrls: ['./animation-pulse.component.css'],
   animations: [
     trigger('growShrink', [
-      state('grow', style({ transform: growScale, backgroundColor: 'red' })),
-      state('shrink', style({ transform: 'scale(1)', backgroundColor: 'blue' })),
+      state('grow', style({ transform: growScale, backgroundColor: '#FF0000' })),
+      state('shrink', style({ transform: 'scale(1)', backgroundColor: '#0000ff' })),
       transition('grow <=> shrink', animate(animationTransition)),
     ]),
   ]
@@ -26,7 +26,7 @@ export class AnimationPulseComponent implements AfterViewInit{
   squares: { x: number; y: number;}[] = [];
 
    //Default variables for test
-   public animationAmount: number = 50;
+   public animationAmount: number = 200;
    public animationIntervalDuration: number = 1000; //The miliseconds it takes to complete a full animation
 
    constructor(private cdr: ChangeDetectorRef) {}

@@ -2,7 +2,7 @@ import { Component, ViewChild, ElementRef, OnInit} from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 //Static animation duration, because Angular animations don't allow for dyanmic duration change
-const animationDuration = '1000ms'; 
+const animationDuration = '500ms'; 
 // ADJUST THIS TO CHANGE ANIMATION SPEED, AND CHANGE THE ANIMATION INTERVAL DURATION ACCORDINGLY
 
 //Animation transitions
@@ -38,8 +38,8 @@ export class AnimationFadeComponent implements OnInit {
   public intervalID;
 
   //Default variables for test
-  public animationAmount: number = 50;
-  public animationIntervalDuration: number = 2000; //The miliseconds it takes to complete a full fade in/out animation
+  public animationAmount: number = 200;
+  public animationIntervalDuration: number = 1000; //The miliseconds it takes to complete a full fade in/out animation
 
   ngOnInit(): void {
     this.animateSquares(this.animationAmount, this.animationIntervalDuration);

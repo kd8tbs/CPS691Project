@@ -15,7 +15,7 @@ export class AnimationBallComponent{
   private animationFrameID: number;
 
   // Default values for test
-  public animationAmount: number = 20;
+  public animationAmount: number = 200;
   public animationSpeed: number = 5;
   
   ngAfterViewInit(){
