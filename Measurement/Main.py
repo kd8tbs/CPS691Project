@@ -133,12 +133,13 @@ chrome_options.add_argument('disable-infobars')
 chrome_options.add_argument('--enable-logging=performance')
 chrome_options.add_argument("--disable-notifications")
 chrome_options.add_argument("--disable-gpu")  # Disable hardware acceleration
+chrome_options.add_argument("--disable-software-rasterizer")  # Additional flag to disable hardware acceleration
 chrome_options.add_experimental_option("excludeSwitches",["enable-automation"])
 chrome_options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})
 #chrome_options.add_argument("--headless")  # Run Chrome in headless mode
 driver =  webdriver.Chrome(service=chrome_service, options=chrome_options)
-print(driver.capabilities['browserVersion'])
-print(driver.capabilities['chrome']['chromedriverVersion'].split(' ')[0])
+# print(driver.capabilities['browserVersion'])
+# print(driver.capabilities['chrome']['chromedriverVersion'].split(' ')[0])
 # Create a CSV file to store the results
 # modify name for test
 
