@@ -8,23 +8,20 @@
         public double Height { get; private set; }
         public string Color { get; private set; }
         public float Opacity { get; private set; }
+        public float Speed { get; private set; }
 
-        private float initialSize = 20;
+        private float initialSize = 10;
 
         private bool isShrinking = true;
-
-        private int redInt = 16711425;
-
-        private int blueInt = 255;
 
         public Square(double x, double y, string color, float opacity, double width, double height)
         {
             (X, Y, Color, Opacity, Width, Height) = (x, y, color, opacity, width, height);
         }
 
-        public void StepForward(double width, double height)
+        public void StepForward(double width, double height, float speed)
         {
-            Opacity -= .04f;            
+            Opacity -= .04f / speed;            
 
             if (Opacity <= 0)
             {
@@ -35,28 +32,28 @@
             }            
         }
 
-        public void NextPulse()
+        public void NextPulse(float speed)
         {
-            if (Width <= 0)
+            if (Width <= initialSize)
             {
                 isShrinking = false;
             }
             
-            if (Width >= initialSize)
+            if (Width >= initialSize * 2)
             {
                 isShrinking = true;
             }
 
             if (isShrinking)
             {
-                Width -= 1f;
-                Height -= 1f;
+                Width -= .75f / speed;
+                Height -= .75f / speed;
                 Color = "#0000ff";                
             }
             else
             {
-                Width += 1f;
-                Height += 1f;
+                Width += .75f / speed;
+                Height += .75f / speed;
                 Color = "#ff0000";
             }
         }

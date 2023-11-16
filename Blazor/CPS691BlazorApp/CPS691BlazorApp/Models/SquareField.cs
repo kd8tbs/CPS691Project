@@ -9,16 +9,16 @@
         public void Resize(double width, double height) =>
             (Width, Height) = (width, height);
 
-        public void StepForward()
+        public void StepForward(float speed)
         {
             foreach (Square square in Squares)
-                square.StepForward(Width, Height);
+                square.StepForward(Width, Height, speed);
         }
 
-        public void NextPulse()
+        public void NextPulse(float speed)
         {
             foreach (Square square in Squares)
-                square.NextPulse();
+                square.NextPulse(speed);
         }
 
         public void AddRandomSquares(int count = 10)
@@ -33,8 +33,8 @@
                         y: Height * rand.NextDouble(),
                         color: "#0000FF",
                         opacity: 1,
-                        width: 20,
-                        height: 20
+                        width: 10,
+                        height: 10
                     )
                 );
             }

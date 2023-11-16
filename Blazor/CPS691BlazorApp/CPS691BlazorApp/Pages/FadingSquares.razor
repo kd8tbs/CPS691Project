@@ -14,9 +14,13 @@
         <input id="nbAnimations" name="nbAnimations" min="1" max="99999" @bind-value=NbAnimations type="number" />
     </div>
     <div class="form-group mb-3">
+        <label for="animationSpeed">Animation speed</label>
+        <input id="animationSpeed" name="animationSpeed" min="1" max="99999" @bind-value=Speed type="number" />
+    </div>
+    @* <div class="form-group mb-3">
         <label for="duration">Test duration (in seconds)</label>
         <input id="duration" name="duration" min="1" max="999" @bind-value=Duration type="number" />
-    </div>
+    </div> *@
     <div>
         <button class="btn btn-success" @onclick="Start" @onclick:preventDefault="true" @onclick:stopPropagation="true">Start test</button>
         <button class="btn btn-danger" @onclick="Stop" @onclick:preventDefault="true" @onclick:stopPropagation="true">Stop test</button>
@@ -37,9 +41,9 @@
 
     private int NbAnimations { get; set; } = 200;
 
-    private int NbTests { get; set; } = 3;
-
     private int Duration { get; set; } = 60;
+
+    private int Speed { get; set; } = 1;
 
     private async Task Start()
     {
@@ -58,6 +62,13 @@
         await JsRuntime.InvokeAsync<object>("stopRenderJS");
     }
 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        this.ctx = await _canvasReference.CreateCanvas2DAsync();
+        await JsRuntime.InvokeAsync<object>("initRenderJS", DotNetObjectReference.Create(this));
+        await base.OnInitializedAsync();
+    }
+
     [JSInvokable]
     public void ResizeInBlazor(double width, double height) => SquareField.Resize(width, height);
 
@@ -70,7 +81,7 @@
         double fps = 1.0 / (DateTime.Now - LastRender).TotalSeconds;
         LastRender = DateTime.Now;
 
-        SquareField.StepForward();
+        SquareField.StepForward(Speed);
 
         await this.ctx.BeginBatchAsync();
 
@@ -82,7 +93,7 @@
         foreach (var square in SquareField.Squares)
         {
             await this.ctx.BeginPathAsync();
-            await this.ctx.RectAsync(square.X, square.Y, 20, 20);
+            await this.ctx.RectAsync(square.X, square.Y, 10, 10);
             await this.ctx.SetFillStyleAsync(square.Color);
             await this.ctx.SetGlobalAlphaAsync(square.Opacity);
             await this.ctx.FillAsync();
@@ -91,6 +102,6 @@
 
         await this.ctx.EndBatchAsync();
         Console.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")} - FPS: {fps:0.000}");
-        await StopWithDelay();
+        //await StopWithDelay();
     }
 }

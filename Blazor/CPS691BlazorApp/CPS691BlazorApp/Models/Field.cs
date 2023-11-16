@@ -5,6 +5,7 @@
         public readonly List<Ball> Balls = new List<Ball>();
         public double Width { get; private set; }
         public double Height { get; private set; }
+        public double Speed { get; private set; }
 
         public void Resize(double width, double height) =>
             (Width, Height) = (width, height);
@@ -23,10 +24,10 @@
             return v;
         }
 
-        public void AddRandomBalls(int count = 10)
+        public void AddRandomBalls(int count = 10, double speed = 5)
         {
-            double minSpeed = .5;
-            double maxSpeed = 5;
+            double minSpeed = speed;
+            double maxSpeed = speed;
             double radius = 10;
             Random rand = new Random();
 
