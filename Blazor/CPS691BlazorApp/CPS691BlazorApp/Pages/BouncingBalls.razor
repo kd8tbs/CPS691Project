@@ -4,27 +4,33 @@
 @using Blazor.Extensions.Canvas.Canvas2D
 @inject IJSRuntime JsRuntime;
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Bouncing Balls</PageTitle>
 
-<h1>Bouncing Balls</h1>
+<div style="text-align: center">
+    <h1 class="mb-5">Bouncing Balls</h1>    
 
-<form class="mb-5">
-    <div class="form-group mb-3">
-        <label for="nbAnimations">Number of animations</label>
-        <input id="nbAnimations" name="nbAnimations" min="1" max="99999" @bind-value=NbAnimations type="number" />
+    <div id="canvasHolder">
+        <BECanvas Width="900" Height="400" @ref="_canvasReference"></BECanvas>
     </div>
-    <div class="form-group mb-3">
+
+    <form class="mb-5 mt-5">
+        <div class="form-group mb-3">
+            <label for="nbAnimations">Number of animations</label>
+            <input id="nbAnimations" name="nbAnimations" min="1" max="99999" @bind-value=NbAnimations type="number" />
+        </div>
+        <div class="form-group mb-3">
+            <label for="animationSpeed">Animation speed</label>
+            <input id="animationSpeed" name="animationSpeed" min="1" max="99999" @bind-value=Speed type="number" />
+        </div>
+        @* <div class="form-group mb-3">
         <label for="duration">Test duration (in seconds)</label>
         <input id="duration" name="duration" min="1" max="999" @bind-value=Duration type="number" />
-    </div>
-    <div>
-        <button class="btn btn-success" @onclick="Start" @onclick:preventDefault="true" @onclick:stopPropagation="true">Start test</button>
-        <button class="btn btn-danger" @onclick="Stop" @onclick:preventDefault="true" @onclick:stopPropagation="true">Stop test</button>
-    </div>
-</form>
-
-<div id="canvasHolder" style="position: fixed; background-color: white; width: 80%; height: 80%">
-    <BECanvas Width="900" Height="400" @ref="_canvasReference"></BECanvas>
+        </div> *@
+        <div>
+            <button class="btn btn-success" @onclick="Start" @onclick:preventDefault="true" @onclick:stopPropagation="true">Start test</button>
+            <button class="btn btn-danger" @onclick="Stop" @onclick:preventDefault="true" @onclick:stopPropagation="true">Stop test</button>
+        </div>
+    </form>
 </div>
 
 @code {
@@ -37,9 +43,9 @@
 
     private int NbAnimations { get; set; } = 200;
 
-    private int NbTests { get; set; } = 3;
-
     private int Duration { get; set; } = 60;
+
+    private int Speed { get; set; } = 5;
 
     private async Task Start()
     {
@@ -58,6 +64,13 @@
         await JsRuntime.InvokeAsync<object>("stopRenderJS");
     }
 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        this.ctx = await _canvasReference.CreateCanvas2DAsync();
+        await JsRuntime.InvokeAsync<object>("initRenderJS", DotNetObjectReference.Create(this));
+        await base.OnInitializedAsync();
+    }
+
     [JSInvokable]
     public void ResizeInBlazor(double width, double height) => BallField.Resize(width, height);
 
@@ -65,7 +78,7 @@
     public async ValueTask RenderInBlazor(float timeStamp)
     {
         if (BallField.Balls.Count == 0)
-            BallField.AddRandomBalls(NbAnimations);
+            BallField.AddRandomBalls(NbAnimations, Speed);
 
         double fps = 1.0 / (DateTime.Now - LastRender).TotalSeconds;
         LastRender = DateTime.Now;
@@ -90,6 +103,6 @@
 
         await this.ctx.EndBatchAsync();
         Console.WriteLine($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")} - FPS: {fps:0.000}");
-        await StopWithDelay();
+        //await StopWithDelay();
     }
 }
