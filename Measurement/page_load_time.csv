@@ -5,3 +5,6 @@ Page Load Time,Output File Name
 0.18415546417236328,angular_pulse_1k.csv
 0.48290562629699707,react_fade_1k.csv
 0.5036628246307373,react_pulse_1k.csv
+0.13727807998657227,blazor_boucing_balls_1k.csv
+0.12855267524719238,blazor_fade_1k.csv
+0.11111307144165039,blazor_pulse_1k.csv
