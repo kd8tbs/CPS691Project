@@ -6,16 +6,16 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ButtonComponent } from './Components/button/button.component';
 import { AnimationBallComponent } from './Views/animation-ball/animation-ball.component';
 import { AnimationFadeComponent } from './Views/animation-fade/animation-fade.component';
+import { AnimationPulseComponent } from './Views/animation-pulse/animation-pulse.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent,
     AnimationBallComponent,
-    AnimationFadeComponent
+    AnimationFadeComponent,
+    AnimationPulseComponent
   ],
   imports: [
     BrowserModule,

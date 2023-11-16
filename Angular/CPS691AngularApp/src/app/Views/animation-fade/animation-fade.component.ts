@@ -1,8 +1,11 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit} from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 
-const animationDuration = '1000ms';
+//Static animation duration, because Angular animations don't allow for dyanmic duration change
+const animationDuration = '500ms'; 
+// ADJUST THIS TO CHANGE ANIMATION SPEED, AND CHANGE THE ANIMATION INTERVAL DURATION ACCORDINGLY
 
+//Animation transitions
 const enterTransition = transition(':enter', [
   style({ opacity: 0 }),
   animate(animationDuration, style({ opacity: 1 }))
@@ -13,6 +16,7 @@ const leaveTrans = transition(':leave', [
   animate(animationDuration, style({ opacity: 0 }))
 ]);
 
+//Animation triggers
 const fadeIn = trigger('fadeIn', [
   enterTransition
 ]);
@@ -27,52 +31,46 @@ const fadeOut = trigger('fadeOut', [
   styleUrls: ['./animation-fade.component.css'],
   animations: [fadeIn, fadeOut]
 })
-export class AnimationFadeComponent {
-  @ViewChild('animationContainer') animationContainer: ElementRef;
+export class AnimationFadeComponent implements OnInit {
+  @ViewChild('animationCanvas') animationCanvas: ElementRef;
   squares: { x: number; y: number;}[] = [];
   public showAnimation: boolean = false;
   public intervalID;
 
-  //Test Variables
-  public startAnimationAmount: number = 0;
-  public testDuration: number = 0;
+  //Default variables for test
+  public animationAmount: number = 200;
+  public animationIntervalDuration: number = 1000; //The miliseconds it takes to complete a full fade in/out animation
 
-  //Variables not being used right now
-  public incrementDuration: number = 0;
-  public animationIncrement: number = 0;
-  public speedIncrement: number = 0;
-  public startTransitionSpeed: number = 0;
+  ngOnInit(): void {
+    this.animateSquares(this.animationAmount, this.animationIntervalDuration);
+  }
 
   public onSubmit(){
-    this.animateSquares();
+    this.endTest();
+    this.animateSquares(this.animationAmount, this.animationIntervalDuration);
   }
 
-  private animateSquares(){
-    const animationIntervalDuration = 2000;
-    const animationStartTime = Date.now();
-    const testDur = this.testDuration;
-    let numOfSquares = this.startAnimationAmount;
-
-    this.intervalID = setInterval(() => this.intervalFunction(testDur, animationStartTime, animationIntervalDuration, numOfSquares), animationIntervalDuration);
+  private animateSquares(numberOfSquares, intervalDuration){
+    //Set an interval to continuously loop
+    this.intervalID = setInterval(() => this.intervalFunction(intervalDuration, numberOfSquares), intervalDuration);
   }
 
-  private intervalFunction(testDur, startTime, animationIntervalDuration, numOfSquares) {
-    if(this.isTestOver(startTime, testDur)){
-      this.endTest();
-    }
-
+  private intervalFunction(intervalDuration, numberOfSquares) {
+    //Initialize squares
     this.squares = [];
-    for (let i = 0; i < numOfSquares; i++){
+    for (let i = 0; i < numberOfSquares; i++){
       this.addSquare();
     }
 
+    //Fade-in animation
     this.showSquares();
-    setTimeout(() => this.hideSquares(), animationIntervalDuration / 2);
+    //Fade-out halfway through the intervalDuration
+    setTimeout(() => this.hideSquares(), intervalDuration / 2);
   }
 
   private addSquare(){
-    const animContainer = this.animationContainer.nativeElement;
-    const divRect = animContainer.getBoundingClientRect();
+    const animCanvas = this.animationCanvas.nativeElement;
+    const divRect = animCanvas.getBoundingClientRect();
     
     //Padding added to prevent any squares from crossing the div boundary
     let maxPadding = 5;
@@ -94,11 +92,6 @@ export class AnimationFadeComponent {
 
   private getRandomPosition(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  private isTestOver(startTime, testDur){
-    const elapsedTime = Date.now() - startTime;
-    return elapsedTime >= (testDur * 1000); //Converted testDur from seconds to miliseconds. 
   }
 
   public endTest(){

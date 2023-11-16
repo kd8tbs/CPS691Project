@@ -1,26 +1,28 @@
 # Instructions to run script:
 # install python and install dependencies via pip with the command:
-# install this specific version of chrome and make sure chromedriver version matches! https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win64/chrome-win64.zip
 # pip install selenium psutil
-# install chrome driver from https://chromedriver.chromium.org/downloads
+# install this specific version of chrome and make sure chromedriver version matches! https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win64/chrome-win64.zip
+# install chrome driver from https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win32/chromedriver-win32.zip
 # modify the chrome_driver_path variable to point to the location of the chrome driver
 chrome_driver_path = "C:\\ProgramData\\chocolatey\\bin\\chromedriver.exe"
 # point this to wherever you have the chrome for testing installed
 chrome_binary_path = 'C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\local\\chrome-win64\\chrome.exe'
 # modify the url variable to point to the url of the website you want to test
-url = "https://www.google.com/"
+# prompt the user to input the development server URL
+url = input("Please enter the development server URL: ")
 
-test_stite_dict = {
-    'Angular' : [], 
-    'React' : [], 
-    'Vue' : [], 
-    'Blazor' : []
-}
+# test_site_dict = {
+#     'Angular' : ['http://localhost:4200/Views/animation-ball', 'http://localhost:4200/Views/animation-fade', 'http://localhost:4200/Views/animation-pulse'], 
+#     'React' : [], 
+#     'Vue' : [], 
+#     'Blazor' : []
+# }
 
-# modify the test_duration variable to change the length of the test (in seconds)
-test_duration = 10
-# modify the csv_file output path
-csv_file = "test_results.csv"
+# prompt the user to input the test duration
+test_duration = int(input("Please enter the test duration (in seconds): "))
+
+# prompt the user to input the name of the output file
+csv_file = input("Please enter the name of the output file: ") + ".csv"
 import time
 import csv
 import psutil
@@ -28,6 +30,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import psutil
+import subprocess
+import re
+import os
 
 # ===============================  MEASUREMENT FUNCTIONS ============================
 
@@ -98,73 +103,103 @@ def estimate_frame_rate(driver):
     frame_rate = driver.execute_async_script(script)
     return frame_rate
 
-
-def get_chrome_power_consumption(pid):
+def get_chrome_usage_percentage(process):
     try:
-        process = psutil.Process(pid)
-        power_usage = process.cpu_percent() / 100  # CPU usage as a fraction
-        return power_usage
+        return process.cpu_percent(interval=0.1) / 100  # CPU usage as a fraction
     except Exception as e:
         print(f"Error while getting power consumption: {e}")
         return None
 
+# def get_power_consumption(process):
+#     try:
+#         cpu_percent = process.cpu_percent(interval=None)
+        
+#         # Convert power consumption from percentage to milliwatts
+#         total_power_consumption = cpu_percent * psutil.cpu_freq().current * 10  # Assuming 10 mW per 1% CPU load
+
+#         return total_power_consumption
+#     except psutil.NoSuchProcess as e:
+#         print(f"Error: {e}")
+#         return None
 
 # ===========================  TEST IMPLEMENTATION ======================
-def write_csv_for_test():
-    print("This is a placeholder")
-    #Print the results with custom filename IE: Angular_performance_results_1
+# def write_csv_for_test():
+#     print("This is a placeholder")
+#     #Print the results with custom filename IE: Angular_performance_results_1
 
-def test_webpage(duration, urls_to_webpages):
-    #Iterate over each URL and run tests 
-    for url in urls_to_webpages:
-        url = 0
-        #Run tests on each webpage for the determined amount of time
-        write_csv_for_test() #Write results to a CSV
-        #Quit the driver 
+# def test_webpage(duration, urls_to_webpages):
+#     #Iterate over each URL and run tests 
+#     for url in urls_to_webpages:
+#         url = 0
+#         #Run tests on each webpage for the determined amount of time
+#         write_csv_for_test() #Write results to a CSV
+#         #Quit the driver 
 
 # Initialize Chrome WebDriver
 chrome_service = ChromeService(chrome_driver_path)
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = chrome_binary_path  # Specify the path to the Chrome binary
 # Create a Chrome browser instance with the performance logging capability
+chrome_options.add_argument('start-maximized')
+chrome_options.add_argument('disable-infobars')
 chrome_options.add_argument('--enable-logging=performance')
-options = webdriver.ChromeOptions()
-options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})
+chrome_options.add_argument("--disable-notifications")
+chrome_options.add_argument("--disable-gpu")  # Disable hardware acceleration
+chrome_options.add_argument("--disable-software-rasterizer")  # Additional flag to disable hardware acceleration
+chrome_options.add_experimental_option("excludeSwitches",["enable-automation"])
+chrome_options.set_capability('goog:loggingPrefs', {'performance': 'ALL'})
 #chrome_options.add_argument("--headless")  # Run Chrome in headless mode
-driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
-print(driver.capabilities['browserVersion'])
-print(driver.capabilities['chrome']['chromedriverVersion'].split(' ')[0])
+driver =  webdriver.Chrome(service=chrome_service, options=chrome_options)
+# print(driver.capabilities['browserVersion'])
+# print(driver.capabilities['chrome']['chromedriverVersion'].split(' ')[0])
 # Create a CSV file to store the results
 # modify name for test
 
-# Ask the user to input the number of seconds to run each test, then begin the test. 
-test_duration = 0
-# Ask the user what test they would like to run
-test_webpage(test_duration, url)
 
 
 
 # Open the web page and start logging performance data
+# Measure page load time 
+start = time.time()
 driver.get(url)
+end = time.time()
+page_load_time = (end - start)
+print("Page Load Time: " + str(page_load_time))
+# Check if the file exists
+page_load_time_csv = "page_load_time.csv"
+if not os.path.isfile(page_load_time_csv):
+    # If the file does not exist, create it and write the headers
+    with open(page_load_time_csv, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["Page Load Time", "Output File Name"])
 
+# Open the file in append mode
+with open(page_load_time_csv, 'a', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    # Write the page load time and the output file name to the CSV file
+    writer.writerow([page_load_time, csv_file])
+print("You have 30 seconds to modify the in page properties before the test begins")
+time.sleep(30)
+print("Test will now begin")
 
 with open(csv_file, 'w', newline='') as csvfile:
-    fieldnames = ['Time (s)', 'Memory Usage (MB)', 'Frame Rate (FPS)', 'Power Consumption (W)']
+    fieldnames = ['Time (s)', 'Memory Usage (MB)', 'Frame Rate (FPS)', 'CPU Percentage']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
-    fps_counter = 0
     start_time = time.time()
+    process = psutil.Process(driver.service.process.pid)
+    process.cpu_percent(interval=0.1)
     while time.time() - start_time < test_duration:
         time_elapsed = time.time() - start_time
         memory_usage = get_chrome_memory_usage(driver.service.process.pid)
         frame_rate = estimate_frame_rate(driver)
-        power_consumption = get_chrome_power_consumption(driver.service.process.pid)
-        writer.writerow({'Time (s)': time_elapsed, 'Memory Usage (MB)': memory_usage, 'Frame Rate (FPS)': frame_rate, 'Power Consumption (W)': power_consumption})
+        current_cpu_usage = get_chrome_usage_percentage(process)
+        # power_consumption = get_power_consumption(process)
+        writer.writerow({'Time (s)': time_elapsed, 'Memory Usage (MB)': memory_usage, 'Frame Rate (FPS)': frame_rate, 'CPU Percentage': current_cpu_usage})
+        previous_cpu_usage = current_cpu_usage
         time.sleep(1)
 
-end_time = time.time()
-fps = fps_counter / (end_time - start_time)
-print(f"FPS: {fps}")
+
 # Close the browser and ChromeDriver
 driver.quit()
 
