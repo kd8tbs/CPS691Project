@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef, OnInit} from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 //Static animation duration, because Angular animations don't allow for dyanmic duration change
+//CHANGE THIS TO HALF TIME
 const animationDuration = '500ms'; 
 // ADJUST THIS TO CHANGE ANIMATION SPEED, AND CHANGE THE ANIMATION INTERVAL DURATION ACCORDINGLY
 
@@ -39,6 +40,7 @@ export class AnimationFadeComponent implements OnInit {
 
   //Default variables for test
   public animationAmount: number = 200;
+  // CHANGE THIS TO FULL TIME
   public animationIntervalDuration: number = 1000; //The miliseconds it takes to complete a full fade in/out animation
 
   ngOnInit(): void {

@@ -3,6 +3,7 @@ import { animate, style, transition, trigger, state } from '@angular/animations'
 
 //Variables to control the animations
 const growScale = 'scale(2)';
+//CHANGE THIS TO HALF TIME
 const animationTransition = '500ms ease-in-out';
 //ANIMATION SCALING AND SPEED IS CONTROLLED HERE
 
@@ -27,6 +28,7 @@ export class AnimationPulseComponent implements AfterViewInit{
 
    //Default variables for test
    public animationAmount: number = 200;
+   //CHANGE THIS TO FULL TIME
    public animationIntervalDuration: number = 1000; //The miliseconds it takes to complete a full animation
 
    constructor(private cdr: ChangeDetectorRef) {}
