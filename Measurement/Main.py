@@ -166,14 +166,15 @@ end = time.time()
 page_load_time = (end - start)
 print("Page Load Time: " + str(page_load_time))
 # Check if the file exists
-if not os.path.isfile(csv_file):
+page_load_time_csv = "page_load_time.csv"
+if not os.path.isfile(page_load_time_csv):
     # If the file does not exist, create it and write the headers
-    with open(csv_file, 'w', newline='') as csvfile:
+    with open(page_load_time_csv, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["Page Load Time", "Output File Name"])
 
 # Open the file in append mode
-with open(csv_file, 'a', newline='') as csvfile:
+with open(page_load_time_csv, 'a', newline='') as csvfile:
     writer = csv.writer(csvfile)
     # Write the page load time and the output file name to the CSV file
     writer.writerow([page_load_time, csv_file])
