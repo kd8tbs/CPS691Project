@@ -32,6 +32,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import psutil
 import subprocess
 import re
+import os
 
 # ===============================  MEASUREMENT FUNCTIONS ============================
 
@@ -164,6 +165,18 @@ driver.get(url)
 end = time.time()
 page_load_time = (end - start)
 print("Page Load Time: " + str(page_load_time))
+# Check if the file exists
+if not os.path.isfile(csv_file):
+    # If the file does not exist, create it and write the headers
+    with open(csv_file, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["Page Load Time", "Output File Name"])
+
+# Open the file in append mode
+with open(csv_file, 'a', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    # Write the page load time and the output file name to the CSV file
+    writer.writerow([page_load_time, csv_file])
 print("You have 30 seconds to modify the in page properties before the test begins")
 time.sleep(30)
 print("Test will now begin")
