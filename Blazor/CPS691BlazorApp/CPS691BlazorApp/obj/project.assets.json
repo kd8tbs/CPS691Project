@@ -1935,19 +1935,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jj445\\.nuget\\packages\\": {}
+    "C:\\Users\\steph\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jj445\\Documents\\GitRepos\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
+      "projectUniqueName": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
       "projectName": "CPS691BlazorApp",
-      "projectPath": "C:\\Users\\jj445\\Documents\\GitRepos\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
-      "packagesPath": "C:\\Users\\jj445\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jj445\\Documents\\GitRepos\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\",
+      "projectPath": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
+      "packagesPath": "C:\\Users\\steph\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jj445\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\steph\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2005,7 +2005,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[7.0.13, 7.0.13]"
+            "version": "[7.0.12, 7.0.12]"
           }
         ],
         "frameworkReferences": {

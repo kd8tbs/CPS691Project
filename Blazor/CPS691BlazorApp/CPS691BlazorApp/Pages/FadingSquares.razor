@@ -4,31 +4,33 @@
 @using Blazor.Extensions.Canvas.Canvas2D
 @inject IJSRuntime JsRuntime;
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Fading Squares</PageTitle>
 
-<h1>Fading Squares</h1>
+<div class="text-center">
+    <h1>Fading Squares</h1>
 
-<form class="mb-5">
-    <div class="form-group mb-3">
-        <label for="nbAnimations">Number of animations</label>
-        <input id="nbAnimations" name="nbAnimations" min="1" max="99999" @bind-value=NbAnimations type="number" />
-    </div>
-    <div class="form-group mb-3">
-        <label for="animationSpeed">Animation speed</label>
-        <input id="animationSpeed" name="animationSpeed" min="1" max="99999" @bind-value=Speed type="number" />
-    </div>
-    @* <div class="form-group mb-3">
+    <form class="mb-5">
+        <div class="form-group mb-3">
+            <label for="nbAnimations">Number of animations</label>
+            <input id="nbAnimations" name="nbAnimations" min="1" max="99999" @bind-value=NbAnimations type="number" />
+        </div>
+        <div class="form-group mb-3">
+            <label for="animationSpeed">Animation speed</label>
+            <input id="animationSpeed" name="animationSpeed" min="1" max="99999" @bind-value=Speed type="number" />
+        </div>
+        @* <div class="form-group mb-3">
         <label for="duration">Test duration (in seconds)</label>
         <input id="duration" name="duration" min="1" max="999" @bind-value=Duration type="number" />
-    </div> *@
-    <div>
-        <button class="btn btn-success" @onclick="Start" @onclick:preventDefault="true" @onclick:stopPropagation="true">Start test</button>
-        <button class="btn btn-danger" @onclick="Stop" @onclick:preventDefault="true" @onclick:stopPropagation="true">Stop test</button>
-    </div>
-</form>
+        </div> *@
+        <div>
+            <button class="btn btn-success" @onclick="Start" @onclick:preventDefault="true" @onclick:stopPropagation="true">Start test</button>
+            <button class="btn btn-danger" @onclick="Stop" @onclick:preventDefault="true" @onclick:stopPropagation="true">Stop test</button>
+        </div>
+    </form>
 
-<div id="canvasHolder" style="position: fixed; background-color: white; width: 80%; height: 80%">
-    <BECanvas Width="900" Height="400" @ref="_canvasReference"></BECanvas>
+    <div id="canvasHolder" style="position: fixed; background-color: white; width: 80%; height: 80%">
+        <BECanvas Width="900" Height="400" @ref="_canvasReference"></BECanvas>
+    </div>
 </div>
 
 @code {

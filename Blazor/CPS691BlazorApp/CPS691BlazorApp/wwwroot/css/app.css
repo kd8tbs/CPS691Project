@@ -101,9 +101,9 @@ a, .btn-link {
     }
 
 canvas {
-    background-color: #ffffff;
+    /*background-color: #ffffff;
     display: block;
-    position: absolute;
+    position: absolute;*/
     width: 80%;
     height: 80%;
 }
