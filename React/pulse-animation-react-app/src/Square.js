@@ -9,7 +9,7 @@ const Square = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const duration = 5; // Set the total duration for growth and shrink animations
+      const duration = .5; // Set the total duration for growth and shrink animations
 
       tl.current
         .to(squareRef.current, { scale: 10, duration })

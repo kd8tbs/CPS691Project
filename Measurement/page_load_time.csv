@@ -1,0 +1,7 @@
+Page Load Time,Output File Name
+0.5341601371765137,react_bouncing_balls_1k.csv
+0.17544960975646973,angular_boucing_ball_1k.csv
+0.16731691360473633,angular_fade_1k.csv
+0.18415546417236328,angular_pulse_1k.csv
+0.48290562629699707,react_fade_1k.csv
+0.5036628246307373,react_pulse_1k.csv

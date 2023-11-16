@@ -10,8 +10,8 @@ const Square = () => {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       tl.current
-        .to(squareRef.current, { opacity: 1, duration: 5 })
-        .to(squareRef.current, { opacity: 0, duration: 5 })
+        .to(squareRef.current, { opacity: 1, duration: .5 })
+        .to(squareRef.current, { opacity: 0, duration: .5 })
         .eventCallback('onRepeat', () => {
           setTop(Math.random() * 400);
           setLeft(Math.random() * 900);
