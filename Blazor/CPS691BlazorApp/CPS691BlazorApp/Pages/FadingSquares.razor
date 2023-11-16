@@ -7,9 +7,13 @@
 <PageTitle>Fading Squares</PageTitle>
 
 <div class="text-center">
-    <h1>Fading Squares</h1>
+    <h1 class="mb-5">Fading Squares</h1>    
 
-    <form class="mb-5">
+    <div id="canvasHolder">
+        <BECanvas Width="900" Height="400" @ref="_canvasReference"></BECanvas>
+    </div>
+
+    <form class="mb-5 mt-5">
         <div class="form-group mb-3">
             <label for="nbAnimations">Number of animations</label>
             <input id="nbAnimations" name="nbAnimations" min="1" max="99999" @bind-value=NbAnimations type="number" />
@@ -27,10 +31,6 @@
             <button class="btn btn-danger" @onclick="Stop" @onclick:preventDefault="true" @onclick:stopPropagation="true">Stop test</button>
         </div>
     </form>
-
-    <div id="canvasHolder" style="position: fixed; background-color: white; width: 80%; height: 80%">
-        <BECanvas Width="900" Height="400" @ref="_canvasReference"></BECanvas>
-    </div>
 </div>
 
 @code {
