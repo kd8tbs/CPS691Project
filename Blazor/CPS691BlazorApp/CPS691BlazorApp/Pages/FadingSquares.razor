@@ -95,7 +95,7 @@
         foreach (var square in SquareField.Squares)
         {
             await this.ctx.BeginPathAsync();
-            await this.ctx.RectAsync(square.X, square.Y, 10, 10);
+            await this.ctx.RectAsync(square.X, square.Y, 25, 25);
             await this.ctx.SetFillStyleAsync(square.Color);
             await this.ctx.SetGlobalAlphaAsync(square.Opacity);
             await this.ctx.FillAsync();

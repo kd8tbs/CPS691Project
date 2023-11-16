@@ -10,7 +10,7 @@
         public float Opacity { get; private set; }
         public float Speed { get; private set; }
 
-        private float initialSize = 10;
+        private float initialSize = 25;
 
         private bool isShrinking = true;
 
@@ -46,14 +46,14 @@
 
             if (isShrinking)
             {
-                Width -= .75f / speed;
-                Height -= .75f / speed;
+                Width -= 2f / speed;
+                Height -= 2f / speed;
                 Color = "#0000ff";                
             }
             else
             {
-                Width += .75f / speed;
-                Height += .75f / speed;
+                Width += 2f / speed;
+                Height += 2f / speed;
                 Color = "#ff0000";
             }
         }
