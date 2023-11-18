@@ -34,14 +34,15 @@ To test all websites, you will have to setup your machine to run the four web fr
 
 ### Setting up Web Frameworks
 
-#### React
-
-#### Vue
-
-#### Angular
-
-#### Web Assembly
+Our project requires that you install the following dependencies:
+* [Node.js](https://nodejs.org/en/)
+* [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) 
+* [Vue cli](https://cli.vuejs.org/#getting-started)
+* [Angular cli](https://angular.io/cli) 
 
 ### Setting up Python
+
+Python packages installed in your environmet: 
+
 
 ## Running tests with the measurement script
