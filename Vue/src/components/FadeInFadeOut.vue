@@ -2,10 +2,18 @@
   <div>
     <button @click="startAnimation">Start Animation</button>
     <button @click="stopAnimation">Stop Animation</button>
+    <label for="animationCount">Animation Count:</label>
+    <input type="number" id="animationCount" v-model="animationCount" />
+    <br />
+    <label for="testDuration">Test Duration (seconds):</label>
+    <input type="number" id="testDuration" v-model="testDurationInput" />
+    <button @click="updateTestDuration">Set Test Duration</button>
     <div class="animation-container" ref="animationContainer">
-      <transition name="fade">
-        <div v-if="showAnimation" class="square" :style="{ left: square.x + 'px', top: square.y + 'px' }"></div>
-      </transition>
+      <transition-group name="fade">
+        <div v-for="(square, index) in squares" :key="index">
+          <div v-if="showAnimation" class="square" :style="{ left: square.x + 'px', top: square.y + 'px' }"></div>
+        </div>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -14,14 +22,20 @@
 export default {
   data() {
     return {
-      square: { x: 0, y: 0 }, // Initial square position
       showAnimation: false,
       intervalID: null,
-      testDuration: 5000, // 5 seconds for testing purposes
+      animationCount: 200,
+      squares: [],
+      testDuration: 5000, // Default 5 seconds for testing purposes
+      testDurationInput: '', // Input field value for test duration
     };
   },
   methods: {
     startAnimation() {
+      this.squares = Array.from({ length: this.animationCount }, () => ({
+        x: 0,
+        y: 0,
+      }));
       this.animateSquare();
     },
     stopAnimation() {
@@ -53,32 +67,25 @@ export default {
     },
     hideSquare() {
       this.showAnimation = false;
-      this.moveSquare(); // Move the square to a new random position after hiding
+      this.moveSquares();
     },
-    moveSquare() {
-      const animContainer = this.$refs.animationContainer;
-      if (!animContainer) {
-        console.error("Animation container is not found.");
-        return;
-      }
-
-      const divRect = animContainer.getBoundingClientRect();
-
-      const maxPadding = 5;
-      const minPadding = 15;
-
-      const top = divRect.top + maxPadding;
-      const bottom = divRect.bottom - minPadding;
-      const left = divRect.left + maxPadding;
-      const right = divRect.right - minPadding;
-
-      this.square = {
-        x: this.getRandomPosition(left, right),
-        y: this.getRandomPosition(top, bottom),
-      };
+    moveSquares() {
+      this.squares.forEach((square) => {
+        square.x = this.getRandomPosition(0, this.$refs.animationContainer.clientWidth - 10);
+        square.y = this.getRandomPosition(0, this.$refs.animationContainer.clientHeight - 10);
+      });
     },
     getRandomPosition(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
+    },
+    updateTestDuration() {
+      // Update the test duration with the input value
+      const newTestDuration = parseInt(this.testDurationInput);
+      if (!isNaN(newTestDuration) && newTestDuration > 0) {
+        this.testDuration = newTestDuration * 1000; // Convert to milliseconds
+      } else {
+        alert('Please enter a valid positive number for the test duration.');
+      }
     },
   },
 };
