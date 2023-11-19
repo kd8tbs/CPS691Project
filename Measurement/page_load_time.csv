@@ -8,3 +8,6 @@ Page Load Time,Output File Name
 0.13727807998657227,blazor_boucing_balls_1k.csv
 0.12855267524719238,blazor_fade_1k.csv
 0.11111307144165039,blazor_pulse_1k.csv
+0.4622645378112793,vue_bouncing_balls_1k.csv
+0.45789337158203125,vue_fade_1k.csv
+0.4647200107574463,vue_pulse_1k.csv
