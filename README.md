@@ -114,7 +114,7 @@ Answer each of the prompts in the terminal to begin a test:
 
 An example:
 
-![Alt text](image.png)
+![Alt text](README_Photos/image.png)
 
 #### Local Dev Server URLs for Angular
 
@@ -130,7 +130,7 @@ For angular, the URLs that host the test webpages are:
 
 After inputting all the infomation and hitting `Enter` one more time. The related webpage will open and an animation will begin. The **Page Load Time** will be outputted for the page and you will be told that you have 30 seconds to change the properties of the page before the test begins. For the webpages with the functionality, you can change the animation speed at this point. 
 
-![Alt text](image-1.png)
+![Alt text](README_Photos/image-1.png)
 
 After the test runs, the webpage for the animation will automatically be closed and a CSV file for the results will outputted to the **Measurement** folder. 
 
