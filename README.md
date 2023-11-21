@@ -4,7 +4,7 @@ The purpose of this document is to inform anyone on how to setup and run the tes
 
 **Our Group Consisted of:**
 * Stephane Maillard
-* Safayet Mohammad
+* Safayet Mohammad Khan
 * Jared Dunham
 * Gary Pinsky 
 
