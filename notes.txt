@@ -1,0 +1,11 @@
+angular bouncing ball
+
+http://127.0.0.1:4200/Views/animation-ball
+
+react pulsing square
+
+http://localhost:3000/
+
+blazor fading square
+
+http://localhost:5094/fadingsquares
