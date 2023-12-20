@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj": {}
+    "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj": {
+    "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
+        "projectUniqueName": "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
         "projectName": "CPS691BlazorApp",
-        "projectPath": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
-        "packagesPath": "C:\\Users\\steph\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\",
+        "projectPath": "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
+        "packagesPath": "C:\\Users\\kd8tb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\steph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kd8tb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -53,6 +53,24 @@
               "target": "Package",
               "version": "[7.0.12, )"
             },
+            "Microsoft.NET.ILLink.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.Sdk.WebAssembly.Pack": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )",
+              "autoReferenced": true
+            },
             "System.Net.Http.Json": {
               "target": "Package",
               "version": "[7.0.1, )"
@@ -72,7 +90,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[7.0.12, 7.0.12]"
+              "version": "[7.0.14, 7.0.14]"
             }
           ],
           "frameworkReferences": {
@@ -80,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

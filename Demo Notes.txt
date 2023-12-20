@@ -1,0 +1,31 @@
+Angular
+cd /mnt/c/Users/kd8tb/Documents/GitHub/CPS691Project/Angular/CPS691AngularApp
+ng serve
+
+http://localhost:4200/
+
+
+React
+cd /mnt/c/Users/kd8tb/Documents/GitHub/CPS691Project/React/bouncing-balls-react-app
+npm start
+
+cd /mnt/c/Users/kd8tb/Documents/GitHub/CPS691Project/React/fading-squares-react-app
+npm start
+
+cd /mnt/c/Users/kd8tb/Documents/GitHub/CPS691Project/React/pulse-animation-react-app
+npm start
+
+
+http://localhost:3000
+http://localhost:3001
+http://localhost:3002
+
+Vue
+cd /mnt/c/Users/kd8tb/Documents/GitHub/CPS691Project/vue
+npm run serve
+
+http://localhost:8080/
+
+
+Blazor
+run in visual studio
