@@ -10,7 +10,7 @@
         public float Opacity { get; private set; }
         public float Speed { get; private set; }
 
-        private float initialSize = 25;
+        private float initialSize = 10;
 
         private bool isShrinking = true;
 

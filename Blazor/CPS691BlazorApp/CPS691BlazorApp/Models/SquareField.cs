@@ -33,8 +33,8 @@
                         y: Height * rand.NextDouble(),
                         color: "#0000FF",
                         opacity: 1,
-                        width: 25,
-                        height: 25
+                        width: 10,
+                        height: 10
                     )
                 );
             }

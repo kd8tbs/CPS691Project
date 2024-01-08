@@ -40,8 +40,8 @@
             var holder = document.getElementById('canvasHolder');
             var canvas = holder.querySelector('canvas');
             if (canvas) {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
+                canvas.width = 900;
+                canvas.height = 400;
                 theInstance.invokeMethodAsync('ResizeInBlazor', canvas.width, canvas.height);
             }
         }

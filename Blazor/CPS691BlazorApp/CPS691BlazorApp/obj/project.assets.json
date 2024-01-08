@@ -446,17 +446,7 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.NET.ILLink.Tasks/8.0.0": {
-=======
-      "Microsoft.NET.ILLink.Analyzers/7.0.100-1.23211.1": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Analyzers.props": {}
-        }
-      },
-      "Microsoft.NET.ILLink.Tasks/7.0.100-1.23211.1": {
->>>>>>> fbc45faac41e46159d4497447ddf24d052c2b34b
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -469,11 +459,7 @@
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets": {}
         }
       },
-<<<<<<< HEAD
       "System.IO.Pipelines/8.0.0": {
-=======
-      "System.IO.Pipelines/7.0.0": {
->>>>>>> fbc45faac41e46159d4497447ddf24d052c2b34b
         "type": "package",
         "compile": {
           "lib/net8.0/System.IO.Pipelines.dll": {
@@ -995,17 +981,7 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.NET.ILLink.Tasks/8.0.0": {
-=======
-      "Microsoft.NET.ILLink.Analyzers/7.0.100-1.23211.1": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Analyzers.props": {}
-        }
-      },
-      "Microsoft.NET.ILLink.Tasks/7.0.100-1.23211.1": {
->>>>>>> fbc45faac41e46159d4497447ddf24d052c2b34b
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -1018,11 +994,7 @@
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets": {}
         }
       },
-<<<<<<< HEAD
       "System.IO.Pipelines/8.0.0": {
-=======
-      "System.IO.Pipelines/7.0.0": {
->>>>>>> fbc45faac41e46159d4497447ddf24d052c2b34b
         "type": "package",
         "compile": {
           "lib/net8.0/System.IO.Pipelines.dll": {
@@ -1924,128 +1896,8 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
-<<<<<<< HEAD
     "Microsoft.NET.ILLink.Tasks/8.0.0": {
       "sha512": "B3etT5XQ2nlWkZGO2m/ytDYrOmSsQG1XNBaM6ZYlX5Ch/tDrMFadr0/mK6gjZwaQc55g+5+WZMw4Cz3m8VEF7g==",
-=======
-    "Microsoft.NET.ILLink.Analyzers/7.0.100-1.23211.1": {
-      "sha512": "0GvbEgDGcUQA9KuWcQU1WwYHXt1tBzNr1Nls/M57rM7NA/AndFwCaCEoJpJkmxRY7xLlPDBnmGp8h5+FNqUngg==",
-      "type": "package",
-      "path": "microsoft.net.illink.analyzers/7.0.100-1.23211.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
-        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
-        "build/Microsoft.NET.ILLink.Analyzers.props",
-        "microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
-        "microsoft.net.illink.analyzers.nuspec"
-      ]
-    },
-    "Microsoft.NET.ILLink.Tasks/7.0.100-1.23211.1": {
-      "sha512": "tvG8XZYLjT0o3WicCyKBZysVWo1jC9HdCFmNRmddx3WbAz0UCsd0qKZqpiEo99VLA8Re+FzWK51OcRldQPbt2Q==",
-      "type": "package",
-      "path": "microsoft.net.illink.tasks/7.0.100-1.23211.1",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "Sdk/Sdk.props",
-        "build/6.0_suppressions.xml",
-        "build/Microsoft.NET.ILLink.Tasks.props",
-        "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",
-        "microsoft.net.illink.tasks.nuspec",
-        "tools/net472/ILLink.Tasks.dll",
-        "tools/net472/Mono.Cecil.dll",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net7.0/ILLink.Tasks.deps.json",
-        "tools/net7.0/ILLink.Tasks.dll",
-        "tools/net7.0/Mono.Cecil.Pdb.dll",
-        "tools/net7.0/Mono.Cecil.dll",
-        "tools/net7.0/illink.deps.json",
-        "tools/net7.0/illink.dll",
-        "tools/net7.0/illink.runtimeconfig.json"
-      ]
-    },
-    "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.0": {
-      "sha512": "zIP/2rXQN1Q7xkqxJmDU31BvoISdhM6tH0o206ShlTCWgcmMKuGapPYIDcDcUmIZjZGHrLKM4z/MsgfLGi0VUw==",
-      "type": "package",
-      "path": "microsoft.net.sdk.webassembly.pack/8.0.0",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "WasmAppHost/BrowserDebugHost.deps.json",
-        "WasmAppHost/BrowserDebugHost.dll",
-        "WasmAppHost/BrowserDebugHost.runtimeconfig.json",
-        "WasmAppHost/BrowserDebugProxy.dll",
-        "WasmAppHost/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
-        "WasmAppHost/Microsoft.CodeAnalysis.CSharp.dll",
-        "WasmAppHost/Microsoft.CodeAnalysis.Scripting.dll",
-        "WasmAppHost/Microsoft.CodeAnalysis.dll",
-        "WasmAppHost/Microsoft.FileFormats.dll",
-        "WasmAppHost/Microsoft.NET.WebAssembly.Webcil.dll",
-        "WasmAppHost/Microsoft.SymbolStore.dll",
-        "WasmAppHost/Newtonsoft.Json.dll",
-        "WasmAppHost/WasmAppHost.deps.json",
-        "WasmAppHost/WasmAppHost.dll",
-        "WasmAppHost/WasmAppHost.runtimeconfig.json",
-        "build/Microsoft.NET.Sdk.WebAssembly.Browser.props",
-        "build/Microsoft.NET.Sdk.WebAssembly.Browser.targets",
-        "build/Microsoft.NET.Sdk.WebAssembly.Pack.props",
-        "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets",
-        "build/Wasm.web.config",
-        "microsoft.net.sdk.webassembly.pack.8.0.0.nupkg.sha512",
-        "microsoft.net.sdk.webassembly.pack.nuspec",
-        "tools/net472/Microsoft.Bcl.AsyncInterfaces.dll",
-        "tools/net472/Microsoft.Build.dll",
-        "tools/net472/Microsoft.IO.Redist.dll",
-        "tools/net472/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
-        "tools/net472/Microsoft.NET.StringTools.dll",
-        "tools/net472/Microsoft.NET.WebAssembly.Webcil.dll",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Configuration.ConfigurationManager.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Reflection.MetadataLoadContext.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net472/System.Security.AccessControl.dll",
-        "tools/net472/System.Security.Permissions.dll",
-        "tools/net472/System.Security.Principal.Windows.dll",
-        "tools/net472/System.Text.Encodings.Web.dll",
-        "tools/net472/System.Text.Json.dll",
-        "tools/net472/System.Threading.Tasks.Dataflow.dll",
-        "tools/net472/System.Threading.Tasks.Extensions.dll",
-        "tools/net472/System.ValueTuple.dll",
-        "tools/net8.0/Microsoft.Build.dll",
-        "tools/net8.0/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
-        "tools/net8.0/Microsoft.NET.StringTools.dll",
-        "tools/net8.0/Microsoft.NET.WebAssembly.Webcil.dll",
-        "tools/net8.0/Microsoft.Win32.SystemEvents.dll",
-        "tools/net8.0/System.Configuration.ConfigurationManager.dll",
-        "tools/net8.0/System.Drawing.Common.dll",
-        "tools/net8.0/System.Reflection.MetadataLoadContext.dll",
-        "tools/net8.0/System.Security.Cryptography.ProtectedData.dll",
-        "tools/net8.0/System.Security.Permissions.dll",
-        "tools/net8.0/System.Windows.Extensions.dll"
-      ]
-    },
-    "System.IO.Pipelines/7.0.0": {
-      "sha512": "jRn6JYnNPW6xgQazROBLSfpdoczRw694vO5kKvMcNnpXuolEixUyw6IBuBs2Y2mlSX/LdLvyyWmfXhaI3ND1Yg==",
->>>>>>> fbc45faac41e46159d4497447ddf24d052c2b34b
       "type": "package",
       "path": "microsoft.net.illink.tasks/8.0.0",
       "hasTools": true,
@@ -2334,36 +2186,27 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Blazor.Extensions.Canvas >= 1.1.1",
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Components.WebAssembly >= 8.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 8.0.0",
       "Microsoft.NET.ILLink.Tasks >= 8.0.0",
       "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.0",
       "System.Net.Http.Json >= 8.0.0"
-=======
-      "Microsoft.AspNetCore.Components.WebAssembly >= 7.0.12",
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 7.0.12",
-      "Microsoft.NET.ILLink.Analyzers >= 7.0.100-1.23211.1",
-      "Microsoft.NET.ILLink.Tasks >= 7.0.100-1.23211.1",
-      "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.0",
-      "System.Net.Http.Json >= 7.0.1"
->>>>>>> fbc45faac41e46159d4497447ddf24d052c2b34b
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kd8tb\\.nuget\\packages\\": {}
+    "C:\\Users\\steph\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
+      "projectUniqueName": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
       "projectName": "CPS691BlazorApp",
-      "projectPath": "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
-      "packagesPath": "C:\\Users\\kd8tb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\",
+      "projectPath": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\CPS691BlazorApp.csproj",
+      "packagesPath": "C:\\Users\\steph\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\steph\\Downloads\\Classes\\CPS691\\CPS691Project\\Blazor\\CPS691BlazorApp\\CPS691BlazorApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kd8tb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\steph\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2414,24 +2257,6 @@
             "version": "[8.0.0, )",
             "autoReferenced": true
           },
-          "Microsoft.NET.ILLink.Analyzers": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[7.0.100-1.23211.1, )",
-            "autoReferenced": true
-          },
-          "Microsoft.NET.ILLink.Tasks": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[7.0.100-1.23211.1, )",
-            "autoReferenced": true
-          },
-          "Microsoft.NET.Sdk.WebAssembly.Pack": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.0, )",
-            "autoReferenced": true
-          },
           "System.Net.Http.Json": {
             "target": "Package",
             "version": "[8.0.0, )"
@@ -2451,11 +2276,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-<<<<<<< HEAD
             "version": "[8.0.0, 8.0.0]"
-=======
-            "version": "[7.0.14, 7.0.14]"
->>>>>>> fbc45faac41e46159d4497447ddf24d052c2b34b
           }
         ],
         "frameworkReferences": {
@@ -2463,11 +2284,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
->>>>>>> fbc45faac41e46159d4497447ddf24d052c2b34b
       }
     },
     "runtimes": {

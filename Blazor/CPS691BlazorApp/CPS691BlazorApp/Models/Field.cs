@@ -28,7 +28,7 @@
         {
             double minSpeed = speed;
             double maxSpeed = speed;
-            double radius = 25;
+            double radius = 10;
             Random rand = new Random();
 
             for (int i = 0; i < count; i++)
