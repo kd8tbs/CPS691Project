@@ -6,7 +6,7 @@
 # modify the chrome_driver_path variable to point to the location of the chrome driver
 chrome_driver_path = "C:\\ProgramData\\chocolatey\\bin\\chromedriver.exe"
 # point this to wherever you have the chrome for testing installed
-chrome_binary_path = 'C:\\Users\\kd8tb\\Documents\\GitHub\\CPS691Project\\local\\chrome-win64\\chrome.exe'
+chrome_binary_path = 'C:\\Program Files\\Google\\chrome-win64\\chrome.exe'
 # modify the url variable to point to the url of the website you want to test
 # prompt the user to input the development server URL
 url = input("Please enter the development server URL: ")

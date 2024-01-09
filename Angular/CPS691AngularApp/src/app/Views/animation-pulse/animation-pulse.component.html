@@ -14,14 +14,8 @@
     </div>
     <div class="form-container">
         <form #testForm="ngForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label for="animationAmount">Number of Animations:  </label>
-                <input type="number" id="animationAmount" name="animationAmount" [(ngModel)]="animationAmount">
-            </div>
-            <div class="form-group">
-                <label for="animationIntervalDuration">Animation Transition Speed (ms):  </label>
-                <input type="number" id="animationIntervalDuration" name="animationIntervalDuration" [(ngModel)]="animationIntervalDuration">
-            </div>
+            <label for="animationAmount">Number of Animations:  </label>
+            <input type="number" id="animationAmount" name="animationAmount" [(ngModel)]="animationAmount">
             <div class="form-group">
                 <div class="form-group-buttons">
                     <button class="button-start" type="submit">Start Test</button>
